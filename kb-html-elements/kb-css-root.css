@@ -1,0 +1,102 @@
+:root
+{
+    /* kb-asset - Add or update colour codes to suit your business or style */
+    --kbColor-Red: #ff0000;
+    --kbColor-Green: #00ff00;
+    --kbColor-Blue: #0000ff;
+    --kbColor-Yellow: #ffff00;
+    --kbColor-Orange: #ffA500;
+    --kbColor-Purple: #800080;
+    --kbColor-Pink: #ffc0cb;
+    --kbColor-Brown: #a52a2a;
+    --kbColor-Silver: #c0c0c0;
+    --kbColor-Gold: #ffd700;
+    --kbColor-Cyan: #00ffff;
+    --kbColor-Magenta: #ff00ff;
+    --kbColor-Lime: #00ff00;
+    --kbColor-Teal: #008080;
+    --kbColor-Navy: #000080;
+    --kbColor-Maroon: #800000;
+    --kbColor-Indigo: #4b0082;
+    --kbColor-Lavender: #e6e6fa;
+    --kbColor-Turquoise: #40e0d0;
+    --kbColor-Beige: #f5f5dc;
+    --kbColor-Mint: #98ff98;
+    --kbColor-Coral: #ff6f61;
+    /* Bright Variant Values */
+    --kbColor-Red-Bright: #ff0000;
+    --kbColor-Green-Bright: #00ff00;
+    --kbColor-Blue-Bright: #0000ff;
+    --kbColor-Yellow-Bright: #ffff00;
+    --kbColor-Orange-Bright: #ffA500;
+    --kbColor-Purple-Bright: #800080;
+    --kbColor-Pink-Bright: #ffc0cb;
+    --kbColor-Brown-Bright: #a52a2a;
+    --kbColor-Silver-Bright: #c0c0c0;
+    --kbColor-Gold-Bright: #ffd700;
+    --kbColor-Cyan-Bright: #00ffff;
+    --kbColor-Magenta-Bright: #ff00ff;
+    --kbColor-Lime-Bright: #00ff00;
+    --kbColor-Teal-Bright: #008080;
+    --kbColor-Navy-Bright: #000080;
+    --kbColor-Maroon-Bright: #800000;
+    --kbColor-Indigo-Bright: #4b0082;
+    --kbColor-Lavender-Bright: #e6e6fa;
+    --kbColor-Turquoise-Bright: #40e0d0;
+    --kbColor-Beige-Bright: #f5f5dc;
+    --kbColor-Mint-Bright: #98ff98;
+    --kbColor-Coral-Bright: #ff6f61;
+    /* Muted Variant Values */
+    --kbColor-Red-Muted: #cc0000;
+    --kbColor-Green-Muted: #00cc00;
+    --kbColor-Blue-Muted: #0000cc;
+    --kbColor-Yellow-Muted: #cccc00;
+    --kbColor-Orange-Muted: #e68500;
+    --kbColor-Purple-Muted: #663366;
+    --kbColor-Pink-Muted: #e0a3a3;
+    --kbColor-Brown-Muted: #704214;
+    --kbColor-Silver-Muted: #b0b0b0;
+    --kbColor-Gold-Muted: #d4af37;
+    --kbColor-Cyan-Muted: #00cccc;
+    --kbColor-Magenta-Muted: #cc00cc;
+    --kbColor-Lime-Muted: #33cc33;
+    --kbColor-Teal-Muted: #005f5f;
+    --kbColor-Navy-Muted: #2e2e5e;
+    --kbColor-Maroon-Muted: #800000;
+    --kbColor-Indigo-Muted: #5d5d75;
+    --kbColor-Lavender-Muted: #cccce6;
+    --kbColor-Turquoise-Muted: #00a5a5;
+    --kbColor-Beige-Muted: #ccc9a7;
+    --kbColor-Mint-Muted: #7fe57f;
+    /* Black, Greys and White */
+    --kbColor-White: #ffffff;
+    --kbColor-Black: #000000;
+    --kbColor-Grey1: #1a1a1a;
+    --kbColor-Grey2: #333333;
+    --kbColor-Grey3: #4d4d4d;
+    --kbColor-Grey4: #666666;
+    --kbColor-Grey5: #808080;
+    --kbColor-Grey6: #999999;
+    --kbColor-Grey7: #b3b3b3;
+    --kbColor-Grey8: #cccccc;
+    /* Main use */
+    --kbBrand-color-pri1: var(--kbColor-Mint);
+    --kbBrand-color-pri2: var(--kbColor-Mint-Bright);
+    --kbBrand-color-pri3: var(--kbColor-Mint-Muted);
+    --kbBrand-color-sec1: var(--kbColor-Blue);
+    --kbBrand-color-sec2: var(--kbColor-Blue-Bright);
+    --kbBrand-color-sec3: var(--kbColor-Blue-Muted);
+    --kbBrand-color-acc1: var(--kbColor-Magenta);
+    --kbBrand-color-acc2: var(--kbColor-Mint);
+    /* Alert colours */
+    --kbAlert-color-urgent: var(--kbColor-Red);
+    --kbAlert-color-caution: var(--kbColor-Orange);
+    --kbAlert-color-pass: var(--kbColor-Green);
+    --kbAlert-color-fail: var(--kbColor-Red);
+    --kbAlert-color-neutral: var(--kbColor-Blue);
+    /* Background colours */
+    --kbBackground-color-lvl1: var(--kbColor-Grey8);
+    --kbBackground-color-lvl2: var(--kbColor-Grey7);
+    --kbBackground-color-lvl3: var(--kbColor-Grey6);
+    --kbBackground-color-content: var(--kbColor-White);
+}
