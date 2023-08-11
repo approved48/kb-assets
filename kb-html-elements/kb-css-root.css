@@ -99,4 +99,8 @@
     --kbBackground-color-lvl2: var(--kbColor-Grey7);
     --kbBackground-color-lvl3: var(--kbColor-Grey6);
     --kbBackground-color-content: var(--kbColor-White);
+
+
+    /* Box Shadows */
+    --kbShadow-Style1: 17px 17px 30px #bebebe, -17px -17px 30px #ffffff;
 }

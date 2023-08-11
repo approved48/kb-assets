@@ -1,0 +1,126 @@
+.kb-c2aTableClass {
+    border-radius: 15px;
+    background: var(--White);
+    box-shadow: 5px 5px 15px #cacaca80, -5px -5px 15px #f6f6f680;
+    width: calc(50% - 2rem);
+    margin-left: 1rem;
+    margin-right: auto;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-table;
+    vertical-align: top;
+    counter-reset: h5counter h6counter;
+}
+    
+@media only screen and (max-width: 1260px) {
+    .kb-c2aTableClass {
+        width: calc(100%-2rem) !important;
+        margin-left: 1rem !important;
+        margin-right: auto !important;
+    }
+}
+    
+.kb-c2aWarningTableClass>tbody>tr {
+    
+}
+
+.kb-c2aTableContentCellClass {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+        
+}
+
+/* Create additional variants of the below for the icons as required for your use */
+
+.kb-c2aIcon-Caution {
+    background-color: var(--MHROrange3);
+    font-size: x-large;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 3.5rem;
+    color: white; 
+}
+    
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+    
+.kb-c2aIcon-Caution:Hover{
+    background: radial-gradient(circle, rgba(255,206,132,1) 20%, rgba(255,166,32,1) 80%);
+}
+    
+    
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+
+.kb-c2aIcon-Caution::before{
+    content: "\f071";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 600;  
+    display: inline-block;
+    color: white; 
+    float: inherit;
+    animation: c2aIconAnimation 15s ease infinite;
+    animation-delay: 10s;
+}
+
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */
+    
+.kb-c2aIcon-Caution::after {
+    color: var(--White);
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    background: var(--kbBackground-color-lvl2);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
+    box-shadow: var(--kbShadow-Style1);
+    border-radius: 5px;
+    margin-left: 30px;
+}
+    
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */
+    
+.kb-c2aIcon-Caution:hover:after
+    { 
+    width: fit-content;
+    content: "Caution";
+    height: fit-content;
+    font-size: min(3vw, 18px);
+}
+
+
+/* Animation for the C2A Icon this can be adjusted for timing and animation */
+.kb-c2aIconAnimation {
+    
+}
+
+@keyframes c2aIconAnimation {
+
+82% { 
+transform: scale(1) rotate(0deg);
+}
+
+86% { 
+transform: scale(1.2); 
+}
+
+  88% { 
+transform: rotate(-20deg) scale(1.2); 
+}
+
+  91% { 
+transform: rotate(20deg) scale(1.2); 
+}
+  96% { 
+transform: rotate(0deg) scale(1.2); 
+}
+  100% { 
+transform: scale(1); 
+}
+}
