@@ -1,0 +1,64 @@
+// This provides a Next button to be used with a link
+
+<style>
+.kb-navButtonNextTable {
+    margin: 0.25rem;
+    border: 0px;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: var(--kbIndicate-color-next);
+    background-size: 100%;
+    background-position: center center;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--kbText-color-defaultAlt) !important;
+    text-decoration: none !important;
+}
+
+.kb-navButtonNextTD:hover {
+    background: var(--kbIndicate-color-next);
+    outline: 2px solid var(--kbOutline-color-hover);
+    outline-width: thick;
+    transition: 0.1s .1s;
+}
+
+.kb-navButtonNextTD a {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: var(--kbText-color-defaultAlt) !important;
+    text-decoration: none !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    font-size: 18px !important;
+    padding: 15px !important;
+    text-align: left !important;
+}
+
+.kb-navButtonNextTD a:hover {
+    color: var(--kbText-color-defaultAlt) !important;
+}
+
+.kb-navButtonNextTD a::before {
+    content: "\f061";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 600;  
+    padding-right: 15px;
+    font-size: 18px;
+    color: var(--kbText-color-defaultAlt) !important;
+}
+</style>
+
+<table class="kb-navButtonNextTable">
+    <tbody>
+    <tr>
+    <td class="kb-navButtonNextTD">
+        <a>Link here</a>
+    </td>
+    </tr>
+    </tbody>
+</table>

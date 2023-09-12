@@ -1,0 +1,95 @@
+// This will provide formatting and styling for a default accordion, may require adjustment to the platform to suit
+
+<style>
+.accordion .kb-itemAccordionStyle1 {
+    font-size: 10pt;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 15px;
+    background: lightgrey;
+    Color: black !important;
+    width: fit-content;
+    padding: .75rem;
+    box-shadow: 5px 5px 15px lightgrey, -5px -5px 15px lightgrey;
+}
+
+.accordion .kb-itemAccordionStyle1:hover {
+    background: white;
+}
+
+.kb-itemAccordionStyle1Table {
+    width: 100%;
+}
+
+.accordion-open > h4.kb-itemAccordionStyle1:after {
+    margin-left: 10px;
+    margin-right: 4px !important;
+    content: "\f00d" !important;
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 900;
+    text-transform: none;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    transition: 0.2s;
+    color: red;
+}
+
+.accordion > h4.kb-itemAccordionStyle1:after {
+    content: "\f078";
+    margin-left: 10px;
+    margin-right: 2px;
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 900;
+    text-transform: none;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+/* Content Table */
+
+.kb-itemAccordionStyle1Content {
+    padding: 5px;
+    min-width: calc(100% - 1.2rem);
+    margin-left: .2rem;
+    margin-right: 1rem;
+    border-left: 5px solid darkgreen;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 5px 5px 15px lightgrey, -5px -5px 15px lightgrey;
+    width: auto !important;
+}
+
+.kb-itemAccordionStyle1Content td {
+    min-width: 100%;
+    padding: 10px;
+    margin: auto;
+    min-height: 1rem;
+}
+</style>
+
+<table class="kb-itemAccordionStyle1Table">
+    <tbody>
+    <tr>
+    <td>
+    <div class="accordion">
+    <h4 class="kb-itemAccordionStyle1">Rename here</h4>
+    <div class="accordionContent">
+    <table class="kb-itemAccordionStyle1Content">
+    <tbody>
+    <tr>
+    <td>
+    <p></p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </td>
+    </tr>
+    </tbody>
+</table>

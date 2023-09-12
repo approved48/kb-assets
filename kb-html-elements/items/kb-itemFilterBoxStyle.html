@@ -1,0 +1,62 @@
+// This will provide custom styling to a filter search box
+
+<style>
+    #filterInput {
+    padding: 1rem;
+    padding-left: 30px;
+    border-radius: .75rem;
+    overflow: hidden;
+    width: calc(100% - 2rem);
+    font: inherit;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: black;
+    outline: 1px solid blue;
+    outline-width: Medium;
+    border: 0px solid transparent;
+    background: lightgrey;
+    transition: 0.1s ease;
+}
+
+#filterInput:hover {
+    box-shadow: inset 10px 10px 30px rgb(180 182 183 / 50%), inset -10px -10px 30px rgb(241 241 241 / 50%), 0 0 2px 10px
+				rgba(76, 139, 234, 0.1);
+    outline: 1px solid rgb(89 221 215 / 35%) !important;
+    outline-width: Medium !important;
+}
+
+#filterInput:active {
+    box-shadow: inset 10px 10px 30px rgb(180 182 183 / 50%), inset -10px -10px 30px rgb(241 241 241 / 50%), 0 0 2px 10px
+				rgba(76, 139, 234, 0.1);
+    outline: 1px solid rgb(89 221 215 / 35%) !important;
+    outline-width: Medium !important;
+}
+
+#filterInput:focus {
+    box-shadow: inset 10px 10px 30px rgb(180 182 183 / 50%), inset -10px -10px 30px rgb(241 241 241 / 50%), 0 0 2px 10px
+				rgba(76, 139, 234, 0.1);
+    outline: 1px solid rgb(89 221 215 / 35%);
+    outline-width: Medium;
+}
+
+.filterInputDIV-Container {
+    width: 100%;
+    margin-top: -1.5rem;
+}
+
+.filterInputDIV-Container::before {
+    content: "\f0b0";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 600;  
+    color: black; 
+    top: 37px;
+    left: 28px;
+    position: relative;
+}
+</style>
+
+<div class="filterInputDIV-Container">
+<p><input id="filterInput" onkeyup="filterTable('filterInput', 'filterTable')" title="Filter table" type="text" /></p>
+</div>
+<p>id="filterTable"</p>
+<p></p>

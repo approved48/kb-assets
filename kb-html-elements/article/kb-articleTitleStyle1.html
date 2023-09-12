@@ -1,0 +1,58 @@
+// This provides a title bar for use at the top of pages
+
+<style>
+.kb-BrandS1Con {
+    width: calc(100% - 2.9rem);
+    margin: 1rem;
+    margin-right: 1.9rem;
+    margin-top: 1rem;
+}
+/* For additional variations, replicate the below style and change background-image url with new logo */
+.kb-BrandS1Logo {
+    text-align: center;
+    height: 40px;
+    background-repeat: no-repeat; background-position: center;
+    background-size:contain;
+    background-image: url();
+    padding-bottom: 10px;
+}
+
+.kb-TitleS1Table {
+    width: calc(100% - 2.9rem);
+    margin: 1rem;
+    margin-right: 1.9rem;
+    margin-top: 1rem;
+}
+/* For additional title bar variations, replicate the below style and change to suit */
+.kb-TitleS1TD {
+    margin: .75rem;
+    border: 0px;
+    border-radius: 1rem;
+    box-shadow: var(--kbShadow-S1);
+    overflow: hidden;
+    background-image: linear-gradient(45deg
+ , var(--kbColor-Grey1), var(--kbColor-Grey2));
+    background-size: 100%;
+    background-position: center center;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: center;
+    padding: 25px 15px;
+    transition: all 0.4s ease 0s;
+    color: var(--kbText-color-title) !important;
+    text-decoration: none !important;
+}
+</style>
+
+<div class="kb-BrandS1Con"></div>
+<div class="kb-BrandS1Logo"></div>
+<table class="kb-TitleS1Table">
+<tbody>
+<tr>
+<td class="kb-TitleS1TD">
+     Title Here
+</td>
+</tr>
+</tbody>
+</table>

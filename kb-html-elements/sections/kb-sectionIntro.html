@@ -1,0 +1,49 @@
+// This will provide a intro type section to a topic or homepage
+<style>
+.kb-sectionIntroTable {
+width: calc(100% - 1rem);
+margin-left: .5rem;
+margin-right: .5rem;
+}
+/* Modify the url for a background image, modify the percentages for how much is covered */
+.kb-sectionIntroText {
+    text-align: left !important;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    background-image: -webkit-linear-gradient(
+    25deg
+    , rgb(255, 255, 255) 63%, rgba(255, 255, 255, 0) 70%), url();
+    padding: 5vw;
+    border-radius: 15px;
+}
+/* This will change the text formatting, if you adjust percentages, also adjust this above */
+.kb-sectionIntroText p {
+    width: 65%;
+}
+.kb-sectionIntroText h4 {
+    width: 65%;
+}  
+
+/* Adjust how the window resizes */
+@media only screen and (max-width: 960px) {
+    .kb-sectionIntroText {
+        width: 100% !important;
+        display: block;
+    }
+    
+}
+</style>
+
+<table class="kb-sectionIntroTable">
+    <tbody>
+    <tr>
+    <td class="kb-sectionIntroText">
+    <h4 style="text-align: left;"><span style="font-size: 24pt;">[greeting], [userfullname]</span></h4>
+    <h4 style="text-align: left;"><span style="font-size: 18pt;">Welcome to the ..... Knowledge Base</span></h4>
+    <p><span style="font-size: 12pt;">This Knowledge Base is the single source of truth for the administration of the ........ system. Use the buttons below or the search above using keywords (e.g. Registration) to quickly jump to a relevant section of the knowledge base. You can also refer to the cards below to keep up-to-date.</span></p>
+    <p><span style="font-size: 12pt;">Use the Daily Checklist and Links to Access Systems guide to ensure you are ready to start the day!</span></p>
+    </td>
+    </tr>
+    </tbody>
+</table>

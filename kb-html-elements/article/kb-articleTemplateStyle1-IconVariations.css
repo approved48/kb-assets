@@ -1,0 +1,264 @@
+/* This provides additional options for icon styles with the articleTemplateStyle1 */
+
+/* If supported by the KB, use a new style for each variation, if KB features a free-form option uncheck it to appear in the drop-down styles */
+
+
+/* Icon for Announcement */
+.kb-TemplateS1Icon-Announce {
+    background-color: var(--kbColor-Green);
+    font-size: xx-large;
+    border-radius: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 7.5%;
+    color: var(--kbText-color-icon); 
+}
+.kb-TemplateS1Icon-Announce:hover {
+    background-color: var(--kbColor-Green-Bright);
+}
+  /* Change the content code to a suitable Font Awesome 5 icon, change the icon color and weight */
+.kb-TemplateS1Icon-Announce::before {
+    content: "\f0a1";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 400;  
+    display: inline-block;
+    color: var(--kbText-color-icon); 
+}
+  /* Change the look of the hover popup */
+.kb-TemplateS1Icon-Announce::after {
+    color: var(--kbText-color-icon);
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    background: var(--kbColor-Green);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
+    box-shadow: 2px 2px 10px lightgrey, -2px -2px 10px lightgrey;
+    border-radius: 1rem;
+    margin-left: 30px;
+}
+  /* Change the content text for the hover popup */
+.kb-TemplateS1Icon-Announce:hover:after {
+    width: fit-content;
+    content: "Announce";
+    height: fit-content;
+    font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Important */  
+.kb-TemplateS1Icon-Important {
+    background-color: var(--kbColor-Red);
+    font-size: xx-large;
+    border-radius: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 7.5%;
+    color: var(--kbText-color-icon); 
+}
+.kb-TemplateS1Icon-Important:hover {
+    background-color: var(--kbColor-Red-Bright);
+}
+  /* Change the content code to a suitable Font Awesome 5 icon, change the icon color and weight */
+.kb-TemplateS1Icon-Important::before {
+    content: "\f05a";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 400;  
+    display: inline-block;
+    color: var(--kbText-color-icon); 
+}
+  /* Change the look of the hover popup */
+.kb-TemplateS1Icon-Important::after {
+    color: var(--kbText-color-icon);
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    background: var(--kbColor-Red);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
+    box-shadow: 2px 2px 10px lightgrey, -2px -2px 10px lightgrey;
+    border-radius: 1rem;
+    margin-left: 30px;
+}
+/* Change the content text for the hover popup */
+.kb-TemplateS1Icon-Important:hover:after {
+    width: fit-content;
+    content: "Important";
+    height: fit-content;
+    font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+  /* Icon for Feedback */  
+.kb-TemplateS1Icon-Feedback {
+    background-color: var(--kbColor-Blue);
+    font-size: xx-large;
+    border-radius: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 7.5%;
+    color: var(--kbText-color-icon); 
+}
+.kb-TemplateS1Icon-Feedback:hover {
+    background-color: var(--kbColor-Blue-Bright);
+}
+  /* Change the content code to a suitable Font Awesome 5 icon, change the icon color and weight */
+.kb-TemplateS1Icon-Feedback::before {
+    content: "\f164";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 400;  
+    display: inline-block;
+    color: var(--kbText-color-icon); 
+}
+  /* Change the look of the hover popup */
+.kb-TemplateS1Icon-Feedback::after {
+    color: var(--kbText-color-icon);
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    background: var(--kbColor-Blue);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
+    box-shadow: 2px 2px 10px lightgrey, -2px -2px 10px lightgrey;
+    border-radius: 1rem;
+    margin-left: 30px;
+}
+  /* Change the content text for the hover popup */
+.kb-TemplateS1Icon-Feedback:hover:after {
+    width: fit-content;
+    content: "Feedback";
+    height: fit-content;
+    font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+/* Icon for Rocket */  
+.kb-TemplateS1Icon-Rocket {
+    background-color: var(--kbColor-Orange);
+    font-size: xx-large;
+    border-radius: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 7.5%;
+    color: var(--kbText-color-icon); 
+}
+.kb-TemplateS1Icon-Feedback:hover {
+    background-color: var(--kbColor-Orange-Bright);
+}
+/* Change the content code to a suitable Font Awesome 5 icon, change the icon color and weight */
+.kb-TemplateS1Icon-Rocket::before {
+    content: "\f164";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 400;  
+    display: inline-block;
+    color: var(--kbText-color-icon); 
+}
+/* Change the look of the hover popup */
+.kb-TemplateS1Icon-Rocket::after {
+    color: var(--kbText-color-icon);
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    background: var(--kbColor-Blue);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
+    box-shadow: 2px 2px 10px lightgrey, -2px -2px 10px lightgrey;
+    border-radius: 1rem;
+    margin-left: 30px;
+}
+/* Change the content text for the hover popup */
+.kb-TemplateS1Icon-Rocket:hover:after {
+    width: fit-content;
+    content: "Rocket";
+    height: fit-content;
+    font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+/* Icon for Glossary */  
+.kb-TemplateS1Icon-Glossary {
+    background-color: var(--kbColor-Mint);
+    font-size: xx-large;
+    border-radius: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 7.5%;
+    color: var(--kbText-color-icon); 
+}
+.kb-TemplateS1Icon-Glossary:hover {
+    background-color: var(--kbColor-Mint-Bright);
+}
+/* Change the content code to a suitable Font Awesome 5 icon, change the icon color and weight */
+    .kb-TemplateS1Icon-Glossary::before {
+    content: "\f164";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 400;  
+    display: inline-block;
+    color: var(--kbText-color-icon); 
+}
+/* Change the look of the hover popup */
+    .kb-TemplateS1Icon-Glossary::after {
+    color: var(--kbText-color-icon);
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    background: var(--kbColor-Mint);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
+    box-shadow: 2px 2px 10px lightgrey, -2px -2px 10px lightgrey;
+    border-radius: 1rem;
+    margin-left: 30px;
+}
+/* Change the content text for the hover popup */
+.kb-TemplateS1Icon-Glossary:hover:after {
+    width: fit-content;
+    content: "Glossary";
+    height: fit-content;
+    font-size: min(3vw, 18px);
+}

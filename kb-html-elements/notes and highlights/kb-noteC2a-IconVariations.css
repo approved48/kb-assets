@@ -1,0 +1,763 @@
+/* This provides additional options for icon styles with the articleTitleStyle3 */
+
+/* If supported by the KB, use a new style for each variation, if KB features a free-form option uncheck it to appear in the drop-down styles */
+
+
+/* Icon for Caution */
+.kb-noteC2A-Icon-Caution {
+  background-color: var(--kbIndicate-color-caution);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Caution:Hover{
+  background: radial-gradient(circle, rgba(255,206,132,1) 20%, rgba(255,166,32,1) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Caution::before{
+  content: "\f071";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Caution::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Caution:hover:after { 
+  width: fit-content;
+  content: "Caution";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for If Yes */
+.kb-noteC2A-Icon-IfYes {
+  background-color: var(--kbIndicate-color-go);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-IfYes:Hover{
+  background: radial-gradient(circle, rgb(221 255 226) 20%, rgba(246,246,246,1) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-IfYes::before{
+  content: "\f00c";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-IfYes::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-IfYes:hover:after { 
+  width: fit-content;
+  content: "If Yes,";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+/* Icon for If No */
+.kb-noteC2A-Icon-IfNo {
+  background-color: var(--kbIndicate-color-stop);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-IfNo:Hover{
+  background: radial-gradient(circle, rgb(255 221 221) 20%, rgba(246,246,246,1) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-IfNo::before{
+  content: "\f00c";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-IfNo::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-IfNo:hover:after { 
+  width: fit-content;
+  content: "If No,";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+/* Icon for Hint/Tip */
+.kb-noteC2A-Icon-HintTip {
+  background-color: var(--kbColor-Blue);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-HintTip:Hover{
+  background: radial-gradient(circle, rgba(105,186,227,1) 20%, rgba(0,127,191,1) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-HintTip::before{
+  content: "\f672";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-HintTip::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-HintTip:hover:after { 
+  width: fit-content;
+  content: "Hint/Tip";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Important */
+.kb-noteC2A-Icon-Important {
+  background-color: var(--kbColor-Red);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Important:Hover{
+  background: radial-gradient(circle, rgba(215,134,109,1) 20%, rgba(177,15,31,1) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Important::before{
+  content: "\f672";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Important::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Important:hover:after { 
+  width: fit-content;
+  content: "Important Information";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Scripting */
+.kb-noteC2A-Icon-Scripting {
+  background-color: var(--kbColor-Blue);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Scripting:Hover{
+  background: radial-gradient(circle, rgb(221 225 255) 20%, rgb(246, 246, 246) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Scripting::before{
+  content: "\f10d";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Scripting::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Scripting:hover:after { 
+  width: fit-content;
+  content: "Scripting";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Questions */
+.kb-noteC2A-Icon-Questions {
+  background-color: var(--kbColor-Blue);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Questions:Hover{
+  background: radial-gradient(circle, rgb(221 225 255) 20%, rgb(246, 246, 246) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Questions::before{
+  content: "\f128";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Questions::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Questions:hover:after { 
+  width: fit-content;
+  content: "Questions";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Links */
+.kb-noteC2A-Icon-Links {
+  background-color: var(--kbColor-Blue);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Links:Hover{
+  background: radial-gradient(circle, rgb(221 225 255) 20%, rgb(246, 246, 246) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Links::before{
+  content: "\f0c1";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Links::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Links:hover:after { 
+  width: fit-content;
+  content: "Relevant Links";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Information */
+.kb-noteC2A-Icon-Information {
+  background-color: var(--kbColor-Blue);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Information:Hover{
+  background: radial-gradient(circle, rgb(221 225 255) 20%, rgb(246, 246, 246) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Information::before{
+  content: "\f039";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Information::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Information:hover:after { 
+  width: fit-content;
+  content: "Information";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for This/That */
+.kb-noteC2A-Icon-ThisThat {
+  background-color: var(--kbColor-Blue);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-ThisThat:Hover{
+  background: radial-gradient(circle, rgb(221 225 255) 20%, rgb(246, 246, 246) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-ThisThat::before{
+  content: "\f0c1";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-ThisThat::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-ThisThat:hover:after { 
+  width: fit-content;
+  content: "This/That";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Steps */
+.kb-noteC2A-Icon-Steps {
+  background-color: var(--kbColor-Blue);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Steps:Hover{
+  background: radial-gradient(circle, rgb(221 225 255) 20%, rgb(246, 246, 246) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Steps::before{
+  content: "\f0cb";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Steps::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Steps:hover:after { 
+  width: fit-content;
+  content: "Steps";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Escalate */
+.kb-noteC2A-Icon-Escalate {
+  background-color: var(--kbColor-Yellow);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Escalate:Hover{
+  background: radial-gradient(circle, rgb(215 177 109 / 64%) 20%, rgb(177 105 15 / 10%) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Escalate::before{
+  content: "\f0cb";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Escalate::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Escalate:hover:after { 
+  width: fit-content;
+  content: "Escalate";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Icon for Complete */
+.kb-noteC2A-Icon-Complete {
+  background-color: var(--kbColor-Green);
+  font-size: x-large;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 3.5rem;
+  color: var(--kbText-color-icon); 
+}
+/* CHANGE THE BACKGROUND HOVER COLOUR */
+.kb-noteC2A-Icon-Complete:Hover{
+  background: radial-gradient(circle, rgba(125,207,140,1) 20%, rgba(50,179,74,1) 80%);
+}
+/* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
+.kb-noteC2A-Icon-Complete::before{
+  content: "\f336";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 600;  
+  display: inline-block;
+  color: white; 
+  animation: c2aIconAnimation 15s ease infinite;
+  animation-delay: 10s;
+}
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */ 
+.kb-noteC2A-Icon-Complete::after {
+  color: var(--kbText-color-icon);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl2);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: var(--kbShadow-Style1);
+  border-radius: 5px;
+  margin-left: 30px;
+}
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */ 
+.kb-noteC2A-Icon-Complete:hover:after { 
+  width: fit-content;
+  content: "Complete";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}

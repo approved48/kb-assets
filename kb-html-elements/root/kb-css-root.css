@@ -99,8 +99,23 @@
     --kbBackground-color-lvl2: var(--kbColor-Grey7);
     --kbBackground-color-lvl3: var(--kbColor-Grey6);
     --kbBackground-color-content: var(--kbColor-White);
-
-
+    /* Indicate colours */
+    --kbIndicate-color-caution: var(--kbColor-Orange);
+    --kbIndicate-color-go: var(--kbColor-Green);
+    --kbIndicate-color-stop: var(--kbColor-Red);
+    --kbIndicate-color-next: var(--kbColor-Blue);
+    --kbIndicate-color-back: var(--kbColor-Blue);
+    /* Outline colours */
+    --kbOutline-color-default: rgb(89 221 215 / 35%);
+    --kbOutline-color-hover: rgb(89 221 215 / 35%);
+    --kbOutline-color-active: rgb(89 221 215 / 35%);
+    --kbOutline-color-alt: rgb(89 221 215 / 35%);
+    /* Text colours */
+    --kbText-color-default: var(--kbColor-Black);
+    --kbText-color-defaultAlt: var(--kbColor-White);
+    --kbText-color-title: var(--kbColor-White);
+    --kbText-color-titleAlt: var(--kbColor-Black);
+    --kbText-color-icon: var(--kbColor-White);
     /* Box Shadows */
     --kbShadow-Style1: 17px 17px 30px #bebebe, -17px -17px 30px #ffffff;
 }

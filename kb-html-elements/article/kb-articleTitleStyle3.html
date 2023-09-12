@@ -1,0 +1,95 @@
+// This provides a unique title bar for Hub/Homepage content
+
+<style>
+.kb-TitleS2Table {
+  width: calc(100% - 2.9rem);
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 1.75vw;
+  border-radius: 15px;
+  box-shadow: var(--kbShadow-Style1);
+  margin: 1rem;
+  margin-right: 1.9rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: var(--kbBackground-color-lvl1);
+}
+/* The following affect the text formatting */
+.kb-TitleS2TD {
+  text-align: left !important;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  background: var(--kbBackground-color-lvl3);
+  width: 80%;
+  display: block;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+.kb-TitleS2TD h4 {
+  color: var(--kbText-color-defaultAlt);
+  font-size: 24pt;
+}
+.kb-TitleS2TD p {
+  color: var(--kbText-color-defaultAlt);
+  font-size: 12pt;
+}
+.kb-TitleS2TD ul {
+  color: var(--kbText-color-defaultAlt);
+  font-size: 12pt;
+}
+.kb-TitleS2TD li {
+  color: var(--kbText-color-defaultAlt);
+  font-size: 12pt;
+}
+.kb-TitleS2TD strong {
+  color: var(--kbText-color-defaultAlt);
+  font-size: 12pt;
+}
+/* Replicate the below and change the -Default tag at the end for multiple variants, change colors to suit */
+.kb-TitleS2Icon-Default {
+  background-color: var(--kbBackground-color-lvl3);
+  font-size: 11vw;
+  border-radius: 2px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  width: 20%;
+  color: var(--kbText-color-icon);
+}
+/* Change the content code to a suitable Font Awesome 5 icon, change the icon color and weight */
+.kb-TitleS2Icon-Default::before {
+  content: "\f0e8";
+    font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+    font-weight: 800;
+    display: inline-block;
+    color: var(--kbText-color-icon);
+    text-shadow: 0px 0px 35px rgba(38, 241, 55, 0.3), 0px 0px 150px rgba(255, 255, 255, 0.3);
+}
+</style>
+
+<table class="kb-TitleS2Table">
+  <tbody>
+  <tr>
+  <td class="kb-TitleS2TD">
+  <h4>Hub Title Here</h4>
+  <p>This  provides information...</p>
+  <p><strong>What is ?</strong></p>
+  <p>A quick description:</p>
+  <ul>
+  <li>dot</li>
+  <li>dot</li>
+  <li>dot</li>
+  <li>dot</li>
+  </ul>
+  <p>Extra description.</p>
+  </td>
+  <td class="kb-TitleS2Icon-Default"></td>
+  </tr>
+  </tbody>
+</table>

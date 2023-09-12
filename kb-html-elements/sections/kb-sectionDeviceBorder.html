@@ -1,0 +1,66 @@
+<style>
+.kb-sectionDeviceBorder img {
+    border: .75rem grey solid;
+    border-top-width:  .75rem;
+    border-bottom-width:  .75rem;
+    border-radius: 1.5rem;
+    overflow-y: hidden;
+    box-shadow:  rgb(219 255 235 / 45%) 20px 20px 30px, rgb(129 165 165 / 20%) -20px -20px 30px;
+    width: 100%;
+    object-fit: fill;
+    margin-right: auto;
+    margin-left: auto;
+    max-height: 600px;
+    max-width: 262px;
+}
+
+
+.kb-sectionDeviceBorder img:active {
+    zoom: 130%;
+    width: 100%;
+    object-fit: fill;
+    margin-right: auto;
+    margin-left: auto;
+    border: 0px;
+}
+
+.kb-sectionDeviceBorder {
+    vertical-align: top;
+    padding-left: 1rem;
+    padding-right: .25rem;
+    width: 30%;
+}
+
+.kb-sectionDeviceBorder-NonCell {
+    vertical-align: top;
+    width: 70%;
+}
+
+@media only screen and (max-width: 1200px) {
+
+.kb-sectionDeviceBorder-NonCell {
+    width: 100%;
+    display:block;
+}
+
+.kb-sectionDeviceBorder {
+    display: block;
+    width: calc(100% - 6rem);
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+}
+</style>
+
+<table>
+    <tbody>
+    <tr>
+    <td class="kb-sectionDeviceBorder-NonCell">
+    <p>add content here</p>
+    </td>
+    <td class="kb-sectionDeviceBorder">
+    <p>add image here to be displayed like a smartphone</p>
+    </td>
+    </tr>
+    </tbody>
+</table>

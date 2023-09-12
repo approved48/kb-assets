@@ -1,0 +1,149 @@
+// This provides a section with selectable tabs
+
+<style>
+.kb-sectionTabs {
+    box-shadow: 5px 5px 15px lightgrey, -5px -5px 15px lightgrey;
+    border-radius: 10px;
+    overflow: hidden;
+    background: lightgrey;
+    background: darkgreen;
+    border: 4px solid darkgreen;
+    margin: 1rem 0;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+    
+.kb-sectionTabs input { 
+    display: none; 
+}
+.kb-sectionTabs input + label { 
+    display: inline-block 
+}
+
+.kb-sectionTabs input ~ .kb-sectionTabs-Tab { 
+    display: none 
+}
+/* Add additional if needed, although consider splitting content in other ways if more is needed */
+#kb-sectionTabs-Tab1:checked ~ .kb-sectionTabs-Tab.content1,
+#kb-sectionTabs-Tab2:checked ~ .kb-sectionTabs-Tab.content2,
+#kb-sectionTabs-Tab3:checked ~ .kb-sectionTabs-Tab.content3,
+#kb-sectionTabs-Tab4:checked ~ .kb-sectionTabs-Tab.content4,
+#kb-sectionTabs-Tab5:checked ~ .kb-sectionTabs-Tab.content5, 
+#kb-sectionTabs-Tab6:checked ~ .kb-sectionTabs-Tab.content6,
+#kb-sectionTabs-Tab7:checked ~ .kb-sectionTabs-Tab.content7,
+#kb-sectionTabs-Tab8:checked ~ .kb-sectionTabs-Tab.content8,
+#kb-sectionTabs-Tab9:checked ~ .kb-sectionTabs-Tab.content9,
+#kb-sectionTabs-Tab10:checked ~ .kb-sectionTabs-Tab.content10
+{
+ display: block; 
+}
+
+.kb-sectionTabs input + label {
+    background: lightgreen;
+    padding: 10px 25px;
+    border-radius: .5rem;
+    position: relative;
+    top: 1px;
+    color: black;
+    margin-top: 0rem;
+    margin-left: .1rem;
+    margin-right: .1rem;
+    margin-bottom: .2rem;
+    font-weight: 600;
+    flex-grow: 1;
+    max-width: calc(max(35%, 35em));
+}
+.kb-sectionTabs input + label:hover {
+    background: rgb(72, 201, 93);
+    cursor: pointer;
+}
+.kb-sectionTabs input:checked + label {
+    background: green;
+    color: white;
+    box-shadow: 0px 0px 2px 0px rgba(0, 249, 0, 0.6), 0px -2px 2px 0px rgba(0, 226, 11, 0.2);
+    border-radius: .5rem .5rem 0 0;
+    transition: 0.2s cubic-bezier(0.42, 0, 0.47, 0.99);
+}
+.kb-sectionTabs input ~ .kb-sectionTabs-Tab {
+    border-top: 1px solid #999;
+    padding: 2px;
+    background: white;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+/* This will impact the formatting of content within the content table */
+
+.kb-sectionTabsContent {
+    padding: 5px;
+    min-width: calc(100% - 4px);
+    margin: 2px;
+    border-radius: 5px;
+    border-left: 5px solid green;
+    background: white;
+    width: auto !important;
+}
+
+.kb-sectionTabsContent td {
+    min-width: 100%;
+    width: auto !important;
+    padding: 10px;
+    margin: auto;
+    min-height: 1rem;
+}
+</style>
+
+<div class="kb-sectionTabs">
+    <input checked="checked" id="kb-sectionTabs-Tab1" name="tabs" type="radio" /> <label for="kb-sectionTabs-Tab1">Tab1</label> 
+    <input id="kb-sectionTabs-Tab2" name="tabs" type="radio" /> <label for="kb-sectionTabs-Tab2">Tab2</label> 
+    <input id="kb-sectionTabs-Tab3" name="tabs" type="radio" /> <label for="kb-sectionTabs-Tab3">Tab3</label> 
+    <input id="kb-sectionTabs-Tab4" name="tabs" type="radio" /> <label for="kb-sectionTabs-Tab4">Tab4</label> 
+    <input id="kb-sectionTabs-Tab5" name="tabs" type="radio" /> <label for="kb-sectionTabs-Tab5">Tab5</label>
+    <div class="kb-sectionTabs-Tab content1">
+    <table class="kb-sectionTabsContent">
+    <tbody>
+    <tr>
+    <td>Content goes here TAB 1</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="kb-sectionTabs-Tab content2">
+    <table class="kb-sectionTabsContent">
+    <tbody>
+    <tr>
+    <td>Content goes here TAB 2</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="kb-sectionTabs-Tab content3">
+    <table class="kb-sectionTabsContent">
+    <tbody>
+    <tr>
+    <td>Content goes here TAB 3</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="kb-sectionTabs-Tab content4">
+    <table class="kb-sectionTabsContent">
+    <tbody>
+    <tr>
+    <td>Content goes here TAB 4</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="kb-sectionTabs-Tab content5">
+    <table class="kb-sectionTabsContent">
+    <tbody>
+    <tr>
+    <td>Content goes here TAB 5</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>

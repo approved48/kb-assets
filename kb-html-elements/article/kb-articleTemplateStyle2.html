@@ -1,0 +1,126 @@
+// This provides a steps and instructions article template for use in the KB
+
+<style>
+  .kb-TemplateS2Table {
+  width: calc(100% - 2.9rem);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 15px lightgrey, -5px -5px 15px lightgrey;
+  margin: 1rem;
+  margin-right: 1.9rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-collapse: collapse;
+  background: white;
+  counter-reset: h5counter h6counter;
+  outline: 1px solid lightgrey;
+}
+.kb-TemplateS2Table td {
+  outline: 1px solid lightgrey;
+}
+/* Customise the below to change the padding for text content */
+.kb-TemplateS2TD {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  background: white;
+}
+.kb-TemplateS2TD h4 {
+  font-weight: bold;
+  font-size: 11pt;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; 
+}
+.kb-TemplateS2TD p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.kb-TemplateS2TD:hover {
+  background: rgb(250, 255, 243);
+}
+/* Changes the numbering on the side it uses the H5 and H6 headers to generate the numbering */
+.kb-TemplateS2Step {
+  background-color: darkgreen;
+  font-size: xx-large;
+  border-radius: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 7.5%;
+  color: darkslategrey; 
+}
+.kb-TemplateS2Step h5 {
+  font-family: Inter,helvetica,arial,sans-serif;
+  font-weight: bold;
+  font-size: 11pt;
+  margin: 1em 0;
+  counter-reset: h6counter;
+  color: white;
+}
+.kb-TemplateS2Step h5::before {
+  content: counter(h5counter) ".\0000a0\0000a0";
+  counter-increment: h5counter; 
+}
+.kb-TemplateS2Step h6 {
+  font-family: Inter,helvetica,arial,sans-serif;
+  font-weight: bold;
+  font-size: 11pt;
+  margin: 1em 0;
+  color: white;
+}
+.kb-TemplateS2Step h6::before {
+  content: counter(h5counter) "." counter(h6counter);
+  counter-increment: h6counter;
+}
+
+</style>
+
+<table class="kb-TemplateS2Table">
+  <tbody>
+  <tr>
+  <td class="kb-TemplateS2Step">
+  <h5></h5>
+  </td>
+  <td class="kb-TemplateS2TD">Steps go here</td>
+  </tr>
+  <tr>
+  <td class="kb-TemplateS2Step">
+  <h6></h6>
+  </td>
+  <td class="kb-TemplateS2TD">Steps go here</td>
+  </tr>
+  <tr>
+  <td class="kb-TemplateS2Step">
+  <h6></h6>
+  </td>
+  <td class="kb-TemplateS2TD">Steps go here</td>
+  </tr>
+  <tr>
+  <td class="kb-TemplateS2Step">
+  <h6></h6>
+  </td>
+  <td class="kb-TemplateS2TD">Steps go here</td>
+  </tr>
+  <tr>
+  <td class="kb-TemplateS2Step">
+  <h5></h5>
+  </td>
+  <td class="kb-TemplateS2TD">Steps go here</td>
+  </tr>
+  <tr>
+  <td class="kb-TemplateS2Step">
+  <h5></h5>
+  </td>
+  <td class="kb-TemplateS2TD">Steps go here</td>
+  </tr>
+  </tbody>
+</table>

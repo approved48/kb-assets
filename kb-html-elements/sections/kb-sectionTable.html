@@ -1,0 +1,84 @@
+// This provides a Table with possible headers
+
+<style>
+.kb-sectionTable {
+    box-shadow: 5px 5px 15px lightgrey, -5px -5px 15px lightgrey;
+    border-collapse: collapse;
+    border-radius: 10px;
+    padding: 1px;
+    width: calc(100% - 1rem);
+    margin-left: .5rem;
+    margin-right: .5rem;
+    background-color: darkgreen;
+    border: 4px solid darkgreen;
+    overflow: hidden;
+}
+/* Provides the formatting for the cells */
+.kb-sectionTable td {
+    outline: 1px solid lightgrey;
+    padding-left: 6px;
+    padding-right: 4px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+/* Provides a hover effect on the row */
+.kb-sectionTable tr:hover {
+    background-color: #d9f2c7 !important;
+}
+/* Provides alternating row colors */
+.kb-sectionTable tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+.kb-sectionTable tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+/* This will change the formatting of header cells */
+.kb-sectionTableHeader {
+    background-color: lightgreen;
+    outline: 2px solid green;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+    padding-left: .1rem !important;
+    padding-right: .1rem !important;
+    padding-bottom: .4rem !important;
+    padding-top: .4rem !important;
+}
+
+</style>
+
+<table class="kb-sectionTable">
+    <tbody>
+    <tr>
+    <td class="kb-sectionTableHeader" style="width: 20%;">Header</td>
+    <td class="kb-sectionTableHeader" style="width: 60%;">Header</td>
+    <td class="kb-sectionTableHeader" style="width: 20%;">Header</td>
+    </tr>
+    <tr>
+    <td style="width: 20%;">Content</td>
+    <td style="width: 60%;">Content</td>
+    <td style="width: 20%;">Content</td>
+    </tr>
+    <tr>
+    <td style="width: 20%;">Content</td>
+    <td style="width: 60%;"></td>
+    <td style="width: 20%;"></td>
+    </tr>
+    <tr>
+    <td style="width: 20%;">Content</td>
+    <td style="width: 60%;"></td>
+    <td style="width: 20%;"></td>
+    </tr>
+    <tr>
+    <td style="width: 20%;">Content</td>
+    <td style="width: 60%;"></td>
+    <td style="width: 20%;"></td>
+    </tr>
+    <tr>
+    <td style="width: 20%;">Content</td>
+    <td style="width: 60%;"></td>
+    <td style="width: 20%;"></td>
+    </tr>
+    </tbody>
+</table>

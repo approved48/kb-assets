@@ -1,7 +1,10 @@
-.kb-c2aTableClass {
+//This will provide base classes for a call to action note (aka highlight note)
+
+<style>
+.kb-noteC2A-TableClass {
     border-radius: 15px;
-    background: var(--White);
-    box-shadow: 5px 5px 15px #cacaca80, -5px -5px 15px #f6f6f680;
+    background: var(--kbBackground-color-lvl1);
+    box-shadow: var(--kbShadow-Style1);
     width: calc(50% - 2rem);
     margin-left: 1rem;
     margin-right: auto;
@@ -14,29 +17,24 @@
 }
     
 @media only screen and (max-width: 1260px) {
-    .kb-c2aTableClass {
+    .kb-noteC2A-TableClass {
         width: calc(100%-2rem) !important;
         margin-left: 1rem !important;
         margin-right: auto !important;
     }
 }
-    
-.kb-c2aWarningTableClass>tbody>tr {
-    
-}
 
-.kb-c2aTableContentCellClass {
+.kb-noteC2A-TableContentCellClass {
     padding-left: 12px;
     padding-right: 12px;
     padding-bottom: 3px;
     padding-top: 3px;
-        
 }
 
-/* Create additional variants of the below for the icons as required for your use */
 
-.kb-c2aIcon-Caution {
-    background-color: var(--MHROrange3);
+/* Create additional variants of the below for the icons as required for your use */
+.kb-noteC2A-Icon-Default {
+    background-color: var(--kbIndicate-color-caution);
     font-size: x-large;
     border-radius: 2px;
     padding-left: 10px;
@@ -45,33 +43,25 @@
     padding-bottom: 8px;
     text-align: center;
     width: 3.5rem;
-    color: white; 
+    color: var(--kbText-color-icon); 
 }
-    
 /* CHANGE THE BACKGROUND HOVER COLOUR */
-    
-.kb-c2aIcon-Caution:Hover{
+.kb-noteC2A-Icon-Default:Hover{
     background: radial-gradient(circle, rgba(255,206,132,1) 20%, rgba(255,166,32,1) 80%);
-}
-    
-    
+} 
 /* CHANGE CONTENT FOR FA ICON, CHANGE COLOR FOR ICON COLOR, CHANGE FONT WEIGHT FOR ICON STYLE */
-
-.kb-c2aIcon-Caution::before{
+.kb-noteC2A-Icon-Default::before{
     content: "\f071";
     font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
     font-weight: 600;  
     display: inline-block;
     color: white; 
-    float: inherit;
     animation: c2aIconAnimation 15s ease infinite;
     animation-delay: 10s;
 }
-
-/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */
-    
-.kb-c2aIcon-Caution::after {
-    color: var(--White);
+/* CHANGE BACKGROUND AND BOX SHADOW FOR POP-UP, CHANGE COLOR FOR FONT COLOR IN POP-UP */   
+.kb-noteC2A-Icon-Default::after {
+    color: var(--kbText-color-icon);
     position: absolute;
     transition: all 0.3s ease 0s;
     background: var(--kbBackground-color-lvl2);
@@ -83,44 +73,25 @@
     border-radius: 5px;
     margin-left: 30px;
 }
-    
-/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */
-    
-.kb-c2aIcon-Caution:hover:after
-    { 
+/* CHANGE CONTENT BELOW FOR POP-UP TEXT ON HOVER */   
+.kb-noteC2A-Icon-Default:hover:after { 
     width: fit-content;
-    content: "Caution";
+    content: "Default";
     height: fit-content;
     font-size: min(3vw, 18px);
 }
 
+</style>
 
-/* Animation for the C2A Icon this can be adjusted for timing and animation */
-.kb-c2aIconAnimation {
-    
-}
-
-@keyframes c2aIconAnimation {
-
-82% { 
-transform: scale(1) rotate(0deg);
-}
-
-86% { 
-transform: scale(1.2); 
-}
-
-  88% { 
-transform: rotate(-20deg) scale(1.2); 
-}
-
-  91% { 
-transform: rotate(20deg) scale(1.2); 
-}
-  96% { 
-transform: rotate(0deg) scale(1.2); 
-}
-  100% { 
-transform: scale(1); 
-}
-}
+<table class="kb-noteC2A-TableClass">
+<tbody>
+<tr>
+<td class="kb-noteC2A-Icon-Default"></td>
+<td class="kb-noteC2A-TableContentCellClass">
+    <h4>Caution</h4>
+    <p>content here</p>
+    <p></p>
+</td>
+</tr>
+</tbody>
+</table>

@@ -1,0 +1,27 @@
+
+    /* Animation for the C2A Icon this can be adjusted for timing and animation */
+
+@keyframes c2aIconAnimation {
+
+82% { 
+transform: scale(1) rotate(0deg);
+}
+
+86% { 
+transform: scale(1.2); 
+}
+
+88% { 
+transform: rotate(-20deg) scale(1.2); 
+}
+
+91% { 
+transform: rotate(20deg) scale(1.2); 
+}
+96% { 
+transform: rotate(0deg) scale(1.2); 
+}
+100% { 
+transform: scale(1); 
+}
+}

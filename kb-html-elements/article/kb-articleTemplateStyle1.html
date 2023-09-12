@@ -1,0 +1,130 @@
+// This provides a standard  template for use in the KB
+
+<style>
+  .kb-TemplateS1Table {
+  width: calc(100% - 2.9rem);
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 1.75vw;
+  border-radius: 1rem;
+  box-shadow: var(--kbShadow-S1);
+  margin: 1rem;
+  margin-right: 1.9rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: var(--kbBackground-color-lvl1);
+  border-collapse: collapse;
+}
+.kb-TemplateS1Table td {
+  outline: 1px solid var(--kbColor-Grey6);
+}
+/* Customise the below to change the padding for text content */
+.kb-TemplateS1TD {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+}
+.kb-TemplateS1TD h4 {
+  font-weight: bold;
+  font-size: 11pt;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; 
+}
+.kb-TemplateS1TD p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+/* Replicate the below and change the -Default tag at the end for multiple variants, change colors to suit */
+.kb-TemplateS1Icon-Default {
+  background-color: var(--kbBackground-color-lvl1);
+  font-size: xx-large;
+  border-radius: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  width: 7.5%;
+  color: var(--kbText-color-icon); 
+}
+.kb-TemplateS1Icon-Default:hover {
+  background-color: var(--kbBackground-color-lvl2);
+}
+/* Change the content code to a suitable Font Awesome 5 icon, change the icon color and weight */
+.kb-TemplateS1Icon-Default::before {
+  content: "\f128";
+  font-family: 'Font Awesome 5 Pro', 'Open Sans', arial, sans-serif;
+  font-weight: 400;  
+  display: inline-block;
+  color: var(--kbText-color-icon); 
+}
+/* Change the look of the hover popup */
+.kb-TemplateS1Icon-Default::after {
+  color: var(--kbText-color-default);
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background: var(--kbBackground-color-lvl3);
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: .4vw;
+  padding-bottom: .4vw;
+  box-shadow: 2px 2px 10px lightgrey, -2px -2px 10px lightgrey;
+  border-radius: 1rem;
+  margin-left: 30px;
+}
+/* Change the content text for the hover popup */
+.kb-TemplateS1Icon-Default:hover:after {
+  width: fit-content;
+  content: "Default";
+  height: fit-content;
+  font-size: min(3vw, 18px);
+}
+</style>
+
+<table class="kb-TemplateS1Table">
+    <tbody>
+    <tr>
+    <td class="kb-TemplateS1Icon-Default"></td>
+    <td class="kb-TemplateS1TD">
+      <h4>Title of section</h4>
+      <p>Information goes here</p>
+    </td>
+    </tr>
+    <tr>
+    <td class="kb-TemplateS1Icon-Default"></td>
+    <td class="kb-TemplateS1TD">
+      <h4>Title of section</h4>
+      <p>Information goes here</p>
+    </td>
+    </tr>
+    <tr>
+    <td class="kb-TemplateS1Icon-Default"></td>
+    <td class="kb-TemplateS1TD">
+      <h4>Title of section</h4>
+      <p>Information goes here</p>
+    </td>
+    </tr>
+    <tr>
+    <td class="kb-TemplateS1Icon-Default"></td>
+    <td class="kb-TemplateS1TD">
+      <h4>Title of section</h4>
+      <p>Information goes here</p>
+    </td>
+    </tr>
+    <tr>
+    <td class="kb-TemplateS1Icon-Default"></td>
+    <td class="kb-TemplateS1TD">
+      <h4>Title of section</h4>
+      <p>Information goes here</p>
+    </td>
+    </tr>
+    </tbody>
+</table>

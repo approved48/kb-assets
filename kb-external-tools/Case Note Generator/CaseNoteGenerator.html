@@ -1,0 +1,4320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Split Frames with iFrame -->
+	<div id="kb-cng-BIGFrameRight">
+		<iframe class="kb-cng-iFrame-embeddedFrame" src="https://google.com" title="Embedded Title Here"></iframe>
+	</div>
+	<div id="kb-cng-BIGFrameMain">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+		<!-- Understanding Popup -->
+
+
+
+		<div class="kb-cng-PopupUnderstand-Div">
+			<div class="kb-cng-TitleBar">
+				<h2>CASE NOTE GENERATOR</h2>
+				<h3>Version HERE</h3>
+			</div>
+			<div class="kb-cng-PopupUnderstand-Text">
+				<p>
+					<strong>// Ensure the version you are using matches the latest
+						version of the Case Note Generator
+					</strong>
+				</p>
+				<hr />
+				<p><strong>// Additional Buttons: </strong></p>
+				<p><strong>&#128221; - Sticky Note</strong></p>
+				<p>- Show/Hide the Sticky Note.</p>
+				<p>
+					- Click and drag the top of the Sticky Note to move
+					around the page.
+				</p>
+				<p>
+					- The Sticky Note will not be included in the generated
+					note, and will be cleared on refresh, or by selecting
+					the 'Clear Notes' button.
+				</p>
+				<p><strong>&#127763; - Theme switcher</strong></p>
+				<p>- Toggle between different themes.</p>
+				<p><strong>&#128297; - Compact Mode</strong></p>
+				<p>- Toggle Compact/Normal Size Modes.</p>
+				<p><strong>&#128215; - Tier 1 Comments</strong></p>
+				<p>
+					- Show/Hide Tier 1 Hints and Suggestions for Tier 2
+					agents.
+				</p>
+				<p><strong>&#129518; - EOI Calculator</strong></p>
+				<p>
+					- Use to calculate points completed during an Evidence
+					of Identity check
+				</p>
+				<p><strong>&#128187; - Embedded</strong></p>
+				<p>
+					- Open a compact version of an embedded webpage (update note before use)
+				</p>
+				<hr />
+				<p><strong>// How to Use: </strong></p>
+				<p>
+					<strong>1.</strong> Select the Copy Note button or use
+					the hotkey [Alt + C] on your keyboard to copy the
+					generated note to your clip board.
+				</p>
+				<p>
+					<strong>2.</strong> Navigate to the CRM note field and
+					use the hotkey [Ctrl + V] to paste the generated notes.
+				</p>
+				<p>
+					<strong>3.</strong> Once notes have been transferred,
+					use the Clear Notes button or use the hotkey [Alt + Z]
+					to clear the selections made.
+				</p>
+				<p>
+					<strong>Hotkeys</strong> You can use [Alt + 1-6] to quickly toggle the additional buttons
+				</p>
+				<p>
+					- e.g. [Alt + 1] will quickly open/close the EOI Calculator
+				</p>
+				<hr />
+			</div>
+			<div class="understandButtonContainer">
+				<button id="understandTMButton" title="I understand" onclick="toggleUnderstandModeSwitch()">
+					I Understand
+				</button>
+			</div>
+		</div>
+		<div class="kb-cng-PopupUnderstand-Blur"></div>
+
+
+
+		<!-- Theme Select Popup -->
+
+
+
+		<div class="kb-cng-PopupThemeSelect-Div">
+			<div class="kb-cng-TitleBar">
+				<h2>THEME SELECTOR //</h2>
+				<h3>Select a theme from below</h3>
+			</div>
+			<div class="kb-cng-PopupThemeSelect-Text">
+				<p style="text-align: center; opacity: 0.05">
+					↑ ↑ ↓ ↓ ← → ← → B A
+				</p>
+			</div>
+			<div class="themeSelectButtonContainer">
+				<button id="themeSelectOptionButton" title="Reset Themes" onclick="toggleRemoveThemeSwitch()">
+					&#9940;
+				</button>
+				<button id="themeSelectOptionButton" title="Toggle Dark/Light Theme" onclick="toggleDarkModeSwitch()">
+					&#127763;
+				</button>
+				<button id="themeSelectOptionButton" title="Toggle Forrest Theme" onclick="toggleForrestThemeSwitch()">
+					&#127794;
+				</button>
+				<button id="themeSelectOptionButton" title="Toggle Ocean Theme" onclick="toggleOceanThemeSwitch()">
+					&#127754;
+				</button>
+				<button id="themeSelectOptionButton" title="Toggle Mainframe Theme"
+					onclick="toggleMainframeThemeSwitch()">
+					&#128223;
+				</button>
+				<button id="themeSelectOptionButton" title="Toggle Gradient A Theme"
+					onclick="toggleGradientAThemeSwitch()">
+					&#128309;
+				</button>
+				<button id="themeSelectOptionButton" title="Toggle Gradient B Theme"
+					onclick="toggleGradientBThemeSwitch()">
+					&#128308;
+				</button>
+			</div>
+			<div class="themeSelectButtonContainer">
+				<button id="themeSelectCloseTMButton" title="Close Theme Select" onclick="toggleThemeSelectPopup()">
+					Close
+				</button>
+			</div>
+		</div>
+		<div class="kb-cng-PopupThemeSelect-Blur"></div>
+
+
+
+		<!-- Floating Buttons -->
+
+
+
+		<div class="toggleModeFloat">
+			<button id="Ext-eoiCalcTMButton" title="Open EOI Calculator" onclick="toggleEOICalculatorSwitch()">
+				&#129518;
+			</button>
+			<button id="tier1TMButton" title="Show/Hide Tier 1 Hints and Reminders"
+				onclick="toggleT1CommentModeSwitch()">
+				&#128215;
+			</button>
+			<button id="compactTMButton" title="Toggle Compact Mode" onclick="toggleSizeModeSwitch()">
+				&#128297;
+			</button>
+			<button id="themeSelectTMButton" title="Open Theme Selector" onclick="toggleThemeSelectPopup()">
+				&#127763;
+			</button>
+			<button id="stickyTMButton" title="Show/Hide Sticky Note" onclick="toggleStickyNoteSwitch()">
+				&#128221;
+			</button>
+			<button id="frameRightTMButton" title="Open/Close Embedded Frame" onclick="toggleBIGFrame()">
+				&#128187; Embedded
+			</button>
+		</div>
+
+
+
+		<!-- Draggable Sticky Note -->
+
+
+
+		<div id="kb-cng-StickyNote">
+			<div id="kb-cng-StickyNoteheader">Sticky Note</div>
+			<textarea id="kb-cng-StickyNoteInput" title="Sticky Note"></textarea>
+		</div>
+
+
+
+		<!-- EOI Calculator -->
+
+
+
+		<div class="eoiCalculator">
+			<div class="eoiCalculator-TitleBar">
+				<h2>EOI Calculator //</h2>
+				<div class="statusEOICalcFloat">
+					<div id="Section1EOIStatus">
+						// Section 1: Additional Required
+					</div>
+					<div id="Section2EOIStatus">
+						// Section 2: Additional Required
+					</div>
+				</div>
+				<div id="eoiSection2_total">
+					Total: ~/100 Required for Section2
+				</div>
+			</div>
+			<div class="kb-cng-topSpacer"></div>
+			<button class="kb-cng-accordion">
+				&#128203; Format A - Section1 Security Check Questions
+			</button>
+			<div class="kb-cng-panel">
+				<p>🔗
+					<a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Add link to internal
+						process here</a>
+				</p>
+				<h4>// Format A Section1 Security Check</h4>
+				<form id="eoiFormatASection1Calc">
+					<label class="eoiFormatASection1Label">
+						<input type="checkbox" id="eoiFormatASection1Item_1" value="15"
+							onchange="checkFormatASection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiFormatASection1Label">
+						<input type="checkbox" id="eoiFormatASection1Item_2" value="10"
+							onchange="checkFormatASection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiFormatCSection1Label">
+						<input type="checkbox" id="eoiFormatASection1Item_3" value="10"
+							onchange="checkFormatASection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiFormatCSection1Label">
+						<input type="checkbox" id="eoiFormatASection1Item_4" value="10"
+							onchange="checkFormatASection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+				</form>
+				<div id="eoiFormatASection1_total">
+					All above required for Format A Section1
+				</div>
+				<hr />
+				<br />
+			</div>
+
+			<button class="kb-cng-accordion">
+				&#128203; Format B - Section1 Security Check Questions
+			</button>
+			<div class="kb-cng-panel">
+				<form id="eoiSection1Calc">
+					<p>🔗
+						<a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Add link to internal
+							process here</a>
+					</p>
+					<h4>// Format B Section1 Security Check</h4>
+					<label class="eoiSection1Label">
+						<input type="checkbox" id="eoiSection1Item_1" value="15" onchange="checkSection1EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection1Label">
+						<input type="checkbox" id="eoiSection1Item_2" value="10" onchange="checkSection1EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection1Label">
+						<input type="checkbox" id="eoiSection1Item_3" value="10" onchange="checkSection1EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection1Label">
+						<input type="checkbox" id="eoiSection1Item_4" value="10" onchange="checkSection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+				</form>
+				<div id="eoiSection1_total">Subtotal: ~/45 Required for Section1</div>
+				<p>
+					If all questions are answered correctly the individual has
+					now obtained 45/100 points of their identification check
+					proceed to Section2 Security Check Questions (adjust to suit)
+				</p>
+				<hr />
+				<br />
+			</div>
+			<button class="kb-cng-accordion">
+				&#128203; Format C - Section1 Security Check Questions
+			</button>
+			<div class="kb-cng-panel">
+				<p>🔗
+					<a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Add link to internal
+						process here</a>
+				</p>
+				<h4>// Format C Section1 Security Check</h4>
+				<form id="eoiFormatCSection1Calc">
+					<label class="eoiFormatCSection1Label">
+						<input type="checkbox" id="eoiFormatCSection1Item_1" value="15"
+							onchange="checkFormatCSection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiFormatCSection1Label">
+						<input type="checkbox" id="eoiFormatCSection1Item_2" value="10"
+							onchange="checkFormatCSection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiFormatCSection1Label">
+						<input type="checkbox" id="eoiFormatCSection1Item_3" value="10"
+							onchange="checkFormatCSection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiFormatCSection1Label">
+						<input type="checkbox" id="eoiFormatCSection1Item_4" value="10"
+							onchange="checkFormatCSection1EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+				</form>
+
+				<div id="eoiFormatCSection1_total">
+					Subtotal: ~/45 Required for Format C Section1
+				</div>
+				<p>
+					If all questions are answered correctly the individual
+					has now obtained 45/100 points of their identification
+					check proceed to Format C Section2 Security Check Questions
+				</p>
+				<br />
+				<hr />
+				<br />
+			</div>
+			<form id="eoiSection2Calc">
+				<button type="button" class="kb-cng-accordion">
+					&#128203; Format B - Section2 Security Check Questions
+				</button>
+
+				<div class="kb-cng-panel">
+
+					<p>🔗
+						<a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Add link to internal
+							process here</a>
+					</p>
+
+					<h4>// Section2 Security Check</h4>
+					<p>Add title of requirement section here</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_1" value="25" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>
+						any additional requirements <br />
+						<strong>Note:</strong> remove if not required
+					</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_2" value="15" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_3" value="15" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_4" value="15" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>
+						any additional requirements <br />
+						<strong>Note:</strong> remove if not required
+					</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_5" value="15" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>Title for next questions</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_6" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_7" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_8" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_9" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>Title for next questions</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_10" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_11" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>Title for next questions</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_12" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_13" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here
+						</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_14" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_15" value="15" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_16" value="10" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_17" value="10" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_18" value="10" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_19" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>Title for next questions</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_20" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_21" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_22" value="15" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_23" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+
+
+					<br />
+					<hr />
+					<br />
+
+				</div>
+
+				<button type="button" class="kb-cng-accordion">
+					&#128203; Format C - Section2 Security Check Questions
+				</button>
+				<div class="kb-cng-panel">
+
+					<p>🔗
+						<a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Add link to internal
+							process here</a>
+
+					</p>
+
+					<h4>// Format C Section2 Security Check</h4>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_24" value="15" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>
+						any additional requirements <br />
+						<strong>Note:</strong> remove if not required
+					</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_25" value="15" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>
+						any additional requirements <br />
+						<strong>Note:</strong> remove if not required
+					</p>
+					<label class="eoiFormatCSection2Label">
+						<input type="checkbox" id="eoiSection2Item_26" value="15" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiFormatCSection2Label">
+						<input type="checkbox" id="eoiSection2Item_27" value="15" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiFormatCSection2Label">
+						<input type="checkbox" id="eoiSection2Item_28" value="15" onchange="checkSection2EOI()" />
+						<span class="title">Add requirement here</span>
+					</label>
+
+					<p>
+					<p>
+						any additional requirements <br />
+						<strong>Note:</strong> remove if not required
+					</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_29" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_30" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>
+						any additional requirements <br />
+						<strong>Note:</strong> remove if not required
+					</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_31" value="15" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_32" value="15" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<p>
+						any additional requirements <br />
+						<strong>Note:</strong> remove if not required
+					</p>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_33" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_34" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_35" value="10" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_36" value="10" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_37" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_38" value="25" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_39" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<label class="eoiSection2Label">
+						<input type="checkbox" id="eoiSection2Item_40" value="5" onchange="checkSection2EOI()" ; />
+						<span class="title">Add requirement here</span>
+					</label>
+					<br />
+					<hr />
+					<br />
+				</div>
+		</div>
+		</form>
+		<div class="toggleModeEOICalcFloat">
+			<button id="Res-eoiCalcTMButton" title="Reset EOI Calculator" onclick="resetEOICalculatorSwitch()">
+				&#128472; Reset
+			</button>
+			<button id="Int-eoiCalcTMButton" title="Close EOI Calculator" onclick="toggleEOICalculatorSwitch()">
+				&#10060;
+			</button>
+		</div>
+
+		<div class="eoiCalculator-Blur"></div>
+
+
+
+
+
+
+
+
+
+
+
+		<!-- CASE NOTE GENERATOR -->
+
+
+
+
+
+
+
+
+
+
+
+		<div class="kb-cng-TitleBar">
+			<h2>CASE NOTE GENERATOR //</h2>
+			<h3>Version HERE</h3>
+		</div>
+		<div class="kb-cng-TitleNote">
+			<p>
+				// <strong>Reminder</strong> - Do not include identifiable
+				information in the description field, and ensure any
+				relevant processes are completed as per 🔗
+				<a href="https://www.google.com/" target="_blank" rel="noreferrer noopener">Add internal process link
+					here</a>//
+			</p>
+		</div>
+
+
+
+		<!-- CASE NOTE GENERATOR SCRIPTING -->
+
+
+
+		<script>
+
+
+
+
+
+
+
+
+
+			// config is an array of elements to be displayed, in order, in the form.
+			// Strings in the array will be reproduced as HTML in the form, and
+			// will not appear in the generated comment
+
+			// Objects will be used to generate form elements based on their type.
+			//
+			// The available types are
+			//  'hidden' - used to add info into every comment, without it being shown
+			//             on the form.
+			//  'checkbox' -
+			//  'select' - Where the user can select one of a set of options. [Use
+			//             checkboxes if the user should be able to choose multiple]
+			//  'textarea' - A free text box.
+			//
+			// The object can have the following additional properties:
+			// 'label': text that will be used to describe the element
+			// 'placeholder': text to be displayed in the field until the user types
+			// 'options': an array of values to be used as options for a select element
+			// 'values': a mapping from the chosen option, to the value added to the
+			//           comment
+			// 'value': synonymous with 'values' but makes most sense for the 'hidden'
+			//         type, as it has a single value.
+			// 'comments': set to 'true' to prompt the user to add more information
+			//             about the options they select.
+
+
+
+
+
+			const config = [
+				{ type: "hidden", value: "//Notes" },
+
+				{
+					label: "Received Transfer (e.g. from Tier 1)",
+					type: "checkbox",
+					values: {
+						true: "Received Transfer",
+					},
+					comments: true,
+					placeholder:
+						"Optional - Additional Comments e.g. Received from Tier 1",
+				},
+
+				{ type: "hidden", value: " " },
+				{ type: "hidden", value: "---- Type of Caller ----" },
+				`<h4>// Who is the caller?</h4>`,
+
+				{
+					label: "",
+					type: "select",
+					options: [
+						"Caller Type A",
+						"Caller Type B",
+						"Caller Type C",
+						"Caller Type D",
+						"Other",
+					],
+					values: {
+						"Caller Type A":
+							"Caller is ",
+						"Caller Type B":
+							"Caller is ",
+						"Caller Type C":
+							"Caller is ",
+						"Caller Type D":
+							"Caller is ",
+						"Other - Add comments below":
+							"",
+					},
+				},
+
+				{
+					label: "",
+					type: "textarea",
+					placeholder:
+						"More information if required e.g. Lawyer, Social Worker, on behalf of (Mother/Father/Husband/Wife) etc. ",
+				},
+
+				"<hr>",
+
+				{ type: "hidden", value: " " },
+				{ type: "hidden", value: "---- Reasons for Call ----" },
+				`<h4>// Reason for call - Select relevant options</h4>`,
+
+				{
+					label: "Common Reasons ",
+					type: "select",
+					options: [
+						"",
+						"Reason for call A",
+						"Reason for call B",
+						"Reason for call C",
+						"Reason for call D",
+						"Reason for call E",
+					],
+					values: {
+						" ": "",
+						"Reason for call A":
+							"reason for call here",
+						"Reason for call B":
+							"reason for call here",
+						"Reason for call C":
+							"reason for call here",
+						"Reason for call D":
+							"reason for call here",
+						"Reason for call E":
+							"reason for call here",
+					},
+				},
+
+				{
+					label: "Alternate Reasons ",
+					type: "select",
+					options: [
+						"",
+						"Reason for call A",
+						"Reason for call B",
+						"Reason for call C",
+						"Reason for call D",
+						"Reason for call E",
+					],
+					values: {
+						" ": "",
+						"Reason for call A":
+							"reason for call here",
+						"Reason for call B":
+							"reason for call here",
+						"Reason for call C":
+							"reason for call here",
+						"Reason for call D":
+							"reason for call here",
+						"Reason for call E":
+							"reason for call here",
+					},
+				},
+
+				{
+					label: "More Reasons ",
+					type: "select",
+					options: [
+						"",
+						"Reason for call A",
+						"Reason for call B",
+						"Reason for call C",
+						"Reason for call D",
+						"Reason for call E",
+					],
+					values: {
+						" ": "",
+						"Reason for call A":
+							"reason for call here",
+						"Reason for call B":
+							"reason for call here",
+						"Reason for call C":
+							"reason for call here",
+						"Reason for call D":
+							"reason for call here",
+						"Reason for call E":
+							"reason for call here",
+					},
+				},
+
+				{
+					label: "Even More Reasons ",
+					type: "select",
+					options: [
+						"",
+						"Reason for call A",
+						"Reason for call B",
+						"Reason for call C",
+						"Reason for call D",
+						"Reason for call E",
+					],
+					values: {
+						" ": "",
+						"Reason for call A":
+							"reason for call here",
+						"Reason for call B":
+							"reason for call here",
+						"Reason for call C":
+							"reason for call here",
+						"Reason for call D":
+							"reason for call here",
+						"Reason for call E":
+							"reason for call here",
+					},
+				},
+
+				`<div class="kb-cng-HighlightedField"><p>Include a summary of reason for the call below.</p></div>`,
+
+				{
+					label: "",
+					type: "textarea",
+					placeholder: "Summary of reason for the call",
+				},
+
+				"<hr>",
+				`<h4>// Cancellation - If Required</h4>`,
+
+				{
+					label: "Wants to cancel",
+					type: "checkbox",
+					values: {
+						true: "---- Cancel ----",
+					},
+					comments: true,
+					placeholder: "Optional - Additional comments",
+				},
+
+				`<div class="kb-cng-HighlightedField"><p>Ensure the relevant 🔗<a href="https://www.google.com" target="_blank" rel="noreferrer noopener">internal process</a> is followed</p></div>`,
+
+				{
+					label: "Reason for Cancellation",
+					type: "select",
+					options: [
+						"",
+						"Privacy concerns",
+						"Hack or leak concerns",
+						"No reason provided",
+					],
+					values: {
+						"": "",
+						"Privacy concerns ":
+							"Would like to cancel due to privacy concerns",
+						"Hack or leak concerns":
+							"Would like to cancel due to hack or leak concerns",
+						"No reason provided":
+							"Would like to cancel, no reason provided",
+					},
+				},
+
+				"<hr>",
+
+				{ type: "hidden", value: " " },
+				{ type: "hidden", value: "---- Evidence of Identity ----" },
+				`<h4>// Evidence of Identity - If Required</h4>`,
+
+				{
+					label: "",
+					type: "select",
+					options: [
+						"",
+						"Not Applicable",
+						"Section1 EOI Passed",
+						"Section1 EOI Failed",
+						"Section2 EOI Passed",
+						"Section2 EOI Failed",
+					],
+					values: {
+						"":
+							"",
+						"Not Applicable":
+							"EOI is not required",
+						"Section1 EOI Passed":
+							"Completed Section1 EOI",
+						"Section2 EOI Passed":
+							"Completed Section2 EOI",
+						"Section1 EOI Failed":
+							"Unable to complete Section1 EOI",
+						"Section2 EOI Failed":
+							"Unable to complete Section2 EOI",
+					},
+				},
+
+				"<hr>",
+
+				`<h4>// Escalation - If Required</h4>`,
+
+				{
+					label: "Escalation required",
+					type: "checkbox",
+					values: {
+						true: "---- Escalation Required ---",
+					},
+					comments: false,
+				},
+
+				`<div class="kb-cng-HighlightedField"><p>Ensure the relevant internal process is followed before escalating</p></div>`,
+
+				{
+					label: "Escalated to:",
+					type: "select",
+					options: [
+						"",
+						"Escalated to next tier",
+						"Escalated to manager",
+					],
+					values: {
+						"": "",
+						"Escalated to next tier":
+							"Escalated to next tier",
+						"Escalated to manager":
+							"Escalated to manager",
+					},
+				},
+
+				`<div class="kb-cng-HighlightedField"><p>If escalating to next tier, the escalation must be approved by a Floor Walker/Team Leader</p></div>`,
+
+				{
+					label: "Next tier Escalation approved",
+					type: "checkbox",
+					values: {
+						true: "Next tier Escalation approved by:",
+					},
+					comments: true,
+					placeholder: "Initials of Floorwalker/Team Leader who approved the Next tier escalation (e.g. John Smith is JS) ",
+				},
+
+				{
+					label: "Caller's contact number provided",
+					type: "checkbox",
+					values: {
+						true: "Caller's contact number provided",
+					},
+					comments: true,
+					placeholder: "Contact Number",
+				},
+
+				{
+					label: "Spoke with next tier Operator",
+					type: "checkbox",
+					values: {
+						true: "Spoke with next tier Operator:",
+					},
+					comments: true,
+					placeholder: "Initials of next tier Operator you spoke with (e.g. John Smith is JS) ",
+				},
+
+				{
+					label: "",
+					type: "textarea",
+					placeholder:
+						"Additional Comments - Relevant to the escalation",
+				},
+
+				"<hr>",
+
+				{ type: "hidden", value: " " },
+				{
+					type: "hidden",
+					value: "---- Actions Taken ----",
+				},
+
+				`<h4>// Action(s) Taken - Select relevant options </h4>`,
+
+				`<div class="kb-cng-HighlightedField"><p>Ensure the relevant 🔗<a href="https://www.google.com" target="_blank" rel="noreferrer noopener">internal process</a> is followed including required Evidence of Identity</p></div>`,
+
+
+
+				{
+					label: "No action(s) taken",
+					type: "checkbox",
+					values: {
+						true: "No action taken",
+					},
+					comments: true,
+					placeholder: "Additional Comments - If Applicable",
+				},
+
+				{
+					label: "Used linking code",
+					type: "checkbox",
+					values: {
+						true: "Used linking code",
+					},
+					comments: true,
+				},
+
+				{
+					label: "Provided linking code",
+					type: "checkbox",
+					values: {
+						true: "Provided linking code",
+					},
+					comments: true,
+				},
+
+				{
+					label: "Provided assistance (+1):",
+					type: "select",
+					options: [
+						"",
+						"Navigating system",
+						"Navigating app",
+						"Setting up system",
+						"Setting up app",
+
+					],
+					values: {
+						"": "",
+						"Navigating system":
+							"Provided assistance - Navigating system",
+						"Navigating app":
+							"Provided assistance -  Navigating app",
+						"Setting up system":
+							"Provided assistance - Setting up system",
+						"Setting up app":
+							"Provided assistance - Setting up app",
+
+					},
+				},
+
+				{
+					label: "Provided assistance (+2):",
+					type: "select",
+					options: [
+						"",
+						"Navigating system",
+						"Navigating app",
+						"Setting up system",
+						"Setting up app",
+
+					],
+					values: {
+						"": "",
+						"Navigating system":
+							"Provided assistance - Navigating system",
+						"Navigating app":
+							"Provided assistance -  Navigating app",
+						"Setting up system":
+							"Provided assistance - Setting up system",
+						"Setting up app":
+							"Provided assistance - Setting up app",
+
+					},
+				},
+
+				{
+					label: "Provided assistance (+3):",
+					type: "select",
+					options: [
+						"",
+						"Navigating system",
+						"Navigating app",
+						"Setting up system",
+						"Setting up app",
+
+					],
+					values: {
+						"": "",
+						"Navigating system":
+							"Provided assistance - Navigating system",
+						"Navigating app":
+							"Provided assistance -  Navigating app",
+						"Setting up system":
+							"Provided assistance - Setting up system",
+						"Setting up app":
+							"Provided assistance - Setting up app",
+
+					},
+				},
+
+				{
+					label: "On their behalf (+1):",
+					type: "select",
+					options: [
+						"",
+						"Updated contacts",
+						"Updated number",
+						"Updated address",
+						"Updated payment details",
+					],
+					values: {
+						"": "",
+						"Updated contacts":
+							"Updated contacts on their behalf",
+						"Updated number":
+							"Updated number on their behalf",
+						"Updated address":
+							"Updated address on their behalf",
+						"Updated payment details":
+							"Updated payment details on their behalf",
+					},
+				},
+
+				{
+					label: "On their behalf (+2):",
+					type: "select",
+					options: [
+						"",
+						"Updated contacts",
+						"Updated number",
+						"Updated address",
+						"Updated payment details",
+					],
+					values: {
+						"": "",
+						"Updated contacts":
+							"Updated contacts on their behalf",
+						"Updated number":
+							"Updated number on their behalf",
+						"Updated address":
+							"Updated address on their behalf",
+						"Updated payment details":
+							"Updated payment details on their behalf",
+					},
+				},
+
+				{
+					label: "On their behalf (+3):",
+					type: "select",
+					options: [
+						"",
+						"Updated contacts",
+						"Updated number",
+						"Updated address",
+						"Updated payment details",
+					],
+					values: {
+						"": "",
+						"Updated contacts":
+							"Updated contacts on their behalf",
+						"Updated number":
+							"Updated number on their behalf",
+						"Updated address":
+							"Updated address on their behalf",
+						"Updated payment details":
+							"Updated payment details on their behalf",
+					},
+				},
+
+				{
+					label: "Referred To:",
+					type: "select",
+					options: [
+						"",
+						"Referred to provider",
+						"Referred to insurer",
+						"Referred to service team",
+					],
+					values: {
+						"": "",
+						"Referred to provider": "Referred to a provider",
+						"Referred to insurer": "Referred to a insurer",
+						"Referred to service team": "Referred to a service team",
+					},
+				},
+
+				{
+					label: "Referred for:",
+					type: "select",
+					options: [
+						"",
+						"Claim",
+						"Additional Information",
+						"Update Details",
+						"For Advice or Next Steps",
+						"Unrelated to us",
+					],
+					values: {
+						"": "",
+						"Claim":
+							"For lodging a Claim",
+						"Additional Information":
+							"For Additional Information",
+						"Update Details": "To update details",
+						"For Advice or Next Steps": "For advice or next steps",
+						"Unrelated to us": "As unrelated to us",
+					},
+				},
+
+				{
+					label: "",
+					type: "textarea",
+					placeholder:
+						"Summary of response provided to caller, actions taken, referred to, outcome etc.",
+				},
+
+				"<hr>",
+
+				{ type: "hidden", value: " " },
+				{
+					type: "hidden",
+					value: "---- Additional Tasks/Comments ----",
+				},
+
+				`<h4>// Additional Tasks - If Applicable</h4>`,
+
+				{
+					label: "Offered assistance setting up account",
+					type: "checkbox",
+					values: {
+						true: "Offered assistance setting up account",
+					},
+					comments: true,
+					placeholder:
+						"What additional assistance was completed?",
+				},
+
+				{
+					label: "Advised about additional resources (e.g.) our website)",
+					type: "checkbox",
+					values: {
+						true: "Advised about additional resources (e.g.) our website)",
+					},
+					comments: false,
+					placeholder: "Optional - Additional comments",
+				},
+
+				{
+					label: "Offered survey",
+					type: "checkbox",
+					values: {
+						true: "Offered survey",
+					},
+					comments: false,
+				},
+
+				"<hr>",
+				`<h4>// Additional Comments - (i.e. Not listed above)</h4>`,
+
+				{
+					label: "",
+					type: "textarea",
+					placeholder:
+						"Additional Comments - (i.e. Not listed above)",
+				},
+
+				{ type: "hidden", value: " " },
+				{ type: "hidden", value: "//" },
+
+				`<div class="kb-cng-HighlightedField">
+						<strong>Reminders:</strong>
+						<ul>
+							<li>Follow and complete all relevant internal processes as required for each individual you speak to on the call 
+								<a href="https://www.google.com"
+									target="_blank"
+									rel="noreferrer noopener"
+									>🔗Internal
+								</a>
+							</li>
+							<li>Ensure all relevant CRM procedures are completed</li>
+								<ul>
+									<li><a href="https://www.google.com"
+									target="_blank"
+									rel="noreferrer noopener"
+									>🔗Internal
+								</a>
+									</li>
+									<li><a href="https://www.google.com"
+									target="_blank"
+									rel="noreferrer noopener"
+									>🔗Internal
+								</a>
+									</li>
+								</ul>
+							
+						</ul>
+						<p></p>
+						<p>
+							
+						</p>
+					</div>`,
+
+				`<div class="kb-cng-HighlightedFieldGreen"><p>Tier 1 - Ensure 'Required Detail' is included in the CRM</p></div>`,
+			];
+
+
+
+		</script>
+	</div>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>CASE NOTE GENERATOR</title>
+
+
+
+
+
+
+
+	<!-- Stylesheet -->
+
+
+
+
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		:root {
+			--kb-cng-fontFamily: "Inter", Helvetica, arial, Verdana,
+				sans-serif;
+
+			--kb-cng-Blue1: #20407f;
+			--kb-cng-Blue2: #007fbf;
+			--kb-cng-Blue3: #26abdf;
+			--kb-cng-Green1: #005926;
+			--kb-cng-Green2: #32b34a;
+			--kb-cng-Green3: #8cc540;
+			--kb-cng-Red1: #b10f1f;
+			--kb-cng-Red2: #db0016;
+			--kb-cng-Red3: #b10f1f;
+			--kb-cng-Orange1: #ef4120;
+			--kb-cng-Orange2: #ff821f;
+			--kb-cng-Orange3: #ffa620;
+			--kb-cng-Pink1: #d82662;
+			--kb-cng-Pink2: #e33972;
+			--kb-cng-Pink3: #e33972;
+			--kb-cng-Grey1: #404040;
+			--kb-cng-Grey2: #6c6c6c;
+			--kb-cng-Grey3: #979797;
+			--kb-cng-Grey4: #bfbfbf;
+			--kb-cng-Grey5: #e6e6e6;
+			--kb-cng-GreyVar: #bbbbbb;
+			--kb-cng-GreyVarD: #484848;
+			--kb-cng-Dark: #050611;
+			--kb-cng-Dark2: #121212;
+			--kb-cng-Dark3: #1c1934;
+			--kb-cng-Light: #f6f6f6;
+			--kb-cng-White: white;
+			--kb-cng-Black: black;
+			--kb-cng-TextDull: #333;
+			--kb-cng-HighlightNote: rgb(255 166 32 / 50%);
+			--kb-cng-HighlightNoteAlt: rgb(255 166 32 / 50%);
+			--kb-cng-HighlightNoteGreen: rgb(50 179 74 / 50%);
+			--kb-cng-HighlightNoteGreenAlt: rgb(50 179 74 / 50%);
+			--kb-cng-StickyNotePink: #ff6fa9;
+			--kb-cng-StickyNoteYellow: #fdff92;
+			--kb-cng-StickyNoteGreen: #6fff6f;
+			--kb-cng-StickyNoteBlue: #80fafc;
+			--kb-cng-StickyNoteGrey: #a8a8a8;
+
+			--kb-cng-Graident-Select: linear-gradient(148deg,
+					rgba(107, 202, 255, 0.9) 0%,
+					rgba(2, 255, 50, 0.9) 35%,
+					rgba(0, 212, 255, 0.9) 100%);
+			--kb-cng-Graident-ToggleButton: radial-gradient(#404040, #6c6c6c);
+			--kb-cng-Gradient-Checkmark: linear-gradient(148deg,
+					rgba(107, 202, 255, 0.9) 0%,
+					rgba(2, 255, 50, 0.9) 35%,
+					rgba(0, 212, 255, 0.9) 100%);
+			--kb-cng-Gradient-eoiPass: linear-gradient(148deg,
+					rgba(107, 202, 255, 1) 0%,
+					rgba(2, 255, 50, 1) 35%,
+					rgba(0, 212, 255, 1) 100%);
+			--kb-cng-Gradient-eoiFail: linear-gradient(148deg,
+					rgb(255, 85, 85) 0%,
+					rgb(255, 2, 2) 35%,
+					rgb(255, 72, 0) 100%);
+			--kb-cng-Gradient-Scroll: linear-gradient(148deg,
+					rgba(107, 202, 255, 0.9) 0%,
+					rgba(2, 255, 50, 0.9) 35%,
+					rgba(0, 212, 255, 0.9) 100%);
+			--kb-cng-Gradient-CopyButton: linear-gradient(45deg,
+					rgba(0, 66, 187, 1) 0%,
+					rgba(0, 108, 255, 1) 20%,
+					rgba(0, 127, 191, 1) 48%,
+					rgba(0, 56, 255, 1) 80%,
+					rgba(98, 0, 255, 1) 100%);
+			--kb-cng-Graident-ClearButton: linear-gradient(45deg,
+					rgba(187, 0, 0, 1) 0%,
+					rgba(255, 0, 48, 1) 20%,
+					rgba(219, 0, 22, 1) 48%,
+					rgba(255, 72, 0, 1) 80%,
+					rgba(255, 0, 0, 1) 100%);
+
+			--kb-cng-OutlineBlue: rgb(0 33 219 / 75%);
+			--kb-cng-OutlineGreen: rgb(89 221 215 / 35%);
+			--kb-cng-OutlineRed: rgb(225 0 0 / 75%);
+
+			--kb-cng-OutlineHover: var(--kb-cng-OutlineGreen);
+			--kb-cng-OutlineDefault: transparent;
+
+			--kb-cng-FontSizeText: 11pt;
+			--kb-cng-FontSizeHeading: 12pt;
+			--kb-cng-FontToggleButton: 14pt;
+			--kb-cng-FontThemeOption: 16pt;
+
+			--kb-cng-CheckboxWidth: 2em;
+			--kb-cng-CheckboxHeight: 2em;
+			--kb-cng-CheckboxTickWidth: 2.1em;
+			--kb-cng-CheckboxTickHeight: 2.1em;
+
+			--kb-cng-BorderRadius: 1rem;
+			--kb-cng-BorderRadiusUI: 0.75rem;
+			--kb-cng-Padding: 1rem;
+			--kb-cng-SelectPadding: 0.5em;
+			--kb-cng-BottomPadding: 0.5rem;
+			--kb-cng-CommentPadding: 0.5em 1em 0.5em 1em;
+			--kb-cng-T1CommentDisplay: block;
+			--kb-cng-BoxShadow: 0px 10px 15px 12px rgba(0, 0, 0, 0.1);
+			--kb-cng-BoxShadowD: 0px 2px 15px 0px #1c1934;
+			--kb-cng-BoxShadowStickyNote: 8px 8px 30px rgb(204, 218, 223),
+				-8px -8px 30px rgba(228, 228, 228, 0.9);
+			--kb-cng-BoxShadowStickyNoteD: 5px 5px 30px #666431,
+				-5px -5px 30px #464646;
+			--kb-cng-BoxShadowInsetCom: inset 10px 10px 30px rgb(180 182 183 / 50%),
+				inset -10px -10px 30px rgb(241 241 241 / 50%);
+			--kb-cng-BoxShadowInsetComD: inset 10px 10px 30px rgb(22 25 50 / 50%),
+				inset -10px -10px 30px rgb(56 51 72 / 50%);
+			--kb-cng-BoxShadowInsetCheck: none;
+			--kb-cng-BoxShadowInsetCheckD: none;
+			--kb-cng-BoxShadowHoverFormat: 0 0 2px 10px rgba(76, 139, 234, 0.1);
+			--kb-cng-BoxShadowHoverFormatD: 0 0 2px 10px rgba(76, 139, 234, 0.1);
+			--kb-cng-ThemeBackground-color: var(--kb-cng-Light);
+			--kb-cng-ThemeFooter-color: var(--kb-cng-Light);
+			--kb-cng-ThemeBanner-color: var(--kb-cng-Light);
+			--kb-cng-ThemeDull-color: var(--kb-cng-TextDull);
+			--kb-cng-ThemeAlt-color: var(--kb-cng-Light);
+			--kb-cng-ThemeText-color: var(--kb-cng-Black);
+			--kb-cng-ThemeTextareaText-color: var(--kb-cng-Black);
+			--kb-cng-ThemeSelectText-color: var(--kb-cng-Black);
+			--kb-cng-ThemeShadow-type: var(--kb-cng-BoxShadow);
+			--kb-cng-BoxShadowStickyNote-type: var(--kb-cng-BoxShadowStickyNote);
+			--kb-cng-BoxShadowInsetCom-type: var(--kb-cng-BoxShadowInsetCom);
+			--kb-cng-BoxShadowHoverFormat-type: var(--kb-cng-BoxShadowHoverFormat);
+			--kb-cng-BoxShadowInsetCheck-type: var(--kb-cng-BoxShadowInsetCheck);
+			--kb-cng-ThemeLink-color: var(--kb-cng-Blue2);
+			--kb-cng-ThemeLink-colorD: #96e7ff;
+			--kb-cng-ThemeSelect-color: var(--kb-cng-Grey5);
+			--kb-cng-ThemeInput-color: var(--kb-cng-Grey5);
+			--kb-cng-ThemeTextarea-color: var(--kb-cng-Grey5);
+			--kb-cng-ThemeHighlightText-color: var(--kb-cng-HighlightNote);
+			--kb-cng-ThemeHighlightTextGreen-color: var(--kb-cng-HighlightNoteGreen);
+
+			--kb-cng-AccordionText-color: var(--kb-cng-ThemeText-color);
+			--kb-cng-AccordionBackground-active: var(--kb-cng-Grey4);
+			--kb-cng-AccordionBackground-hover: var(--kb-cng-Grey4);
+			--kb-cng-AccordionBackground-normal: var(--kb-cng-Grey5);
+			--kb-cng-AccordionBoxShadow-normal: 0px 5px 10px 2px var(--kb-cng-ButtonShadow-color),
+				2px 4px var(--kb-cng-ButtonShadow-color);
+			--kb-cng-AccordionBoxShadow-active: 0px 5px 10px 2px var(--kb-cng-ButtonShadow-color),
+				0px 0px 2px var(--kb-cng-ButtonShadow-color);
+
+			--kb-cng-ThemeScrollBar: var(--kb-cng-Grey4);
+			--kb-cng-ThemeScrollTrack: var(--kb-cng-ThemeSelect-color);
+
+			--kb-cng-PopupToggle-Visibility: visible;
+			--kb-cng-PopupToggle-Opacity: 100;
+			--kb-cng-PopupToggle-Transform: translate3d(0px, 0px, 0px);
+			--kb-cng-PopupToggle-Skew: skewY(0deg);
+
+			--kb-cng-PopupTheme-Visibility: hidden;
+			--kb-cng-PopupTheme-Opacity: 0;
+			--kb-cng-PopupTheme-Transform: translate3d(0px, -275px, 0px);
+			--kb-cng-PopupTheme-Skew: skewY(-15deg);
+
+			--kb-cng-StickyNote-Opacity: 100;
+			--kb-cng-StickyNote-Transform: translate3d(0px, 0px, 0px);
+			--kb-cng-StickyNote-Skew: skewY(0deg);
+			--kb-cng-StickyNote-Visibility: visible;
+			--kb-cng-StickyNoteColor: var(--kb-cng-StickyNoteYellow);
+			--kb-cng-StickyNote-Left: 80%;
+			--kb-cng-StickyNote-Top: 5rem;
+
+			--kb-cng-Calculator-MinResult: var(--kb-cng-Gradient-eoiFail);
+			--kb-cng-Calculator-MajResult: var(--kb-cng-Gradient-eoiFail);
+
+			--kb-cng-Calculator-Visibility: hidden;
+			--kb-cng-Calculator-Opacity: 0;
+			--kb-cng-Calculator-Transform: translate3d(0px, -275px, 0px);
+			--kb-cng-Calculator-Skew: skewY(-15deg);
+
+			--kb-cng-Calculator-MinAnimateJump: none;
+			--kb-cng-Calculator-MajAnimateJump: none;
+			--kb-cng-Calculator-MinAnimateShadow: none;
+			--kb-cng-Calculator-MajAnimateShadow: none;
+			--kb-cng-Calculator-MinShadow: 0 0 5px rgb(255, 0, 0);
+			--kb-cng-Calculator-MajShadow: 0 0 5px rgb(255, 0, 0);
+
+			--kb-cng-ThemeToast-color: var(--kb-cng-ThemeBanner-color);
+			--kb-cng-ThemeToast-text: var(--kb-cng-ThemeText-color);
+			--kb-cng-ThemeToast-gradient: var(--kb-cng-Grey1);
+			--kb-cng-ThemeToast-shadow: var(--kb-cng-ThemeShadow-type);
+			--kb-cng-ThemeToast-animation: 1.5s forwards slideUp;
+			--kb-cng-ThemeToast-shadowCopy: 10px 10px 150px 15px rgb(0, 132, 255);
+			--kb-cng-ThemeToast-shadowClear: 10px 10px 150px 15px rgb(255, 60, 0);
+
+			--kb-cng-ButtonShadow-color: var(--kb-cng-GreyVar);
+
+			--kb-cng-BIGFrameMain-Width: 100%;
+			--kb-cng-BIGFrameForm-Width: 100%;
+			--kb-cng-BIGFrameRight-Width: 0%;
+			--kb-cng-BIGFrameRight-Visibility: hidden;
+			--kb-cng-BIGFrameFooter-Width: 100%;
+			--kb-cng-BIGFrameTogggles-Margin: 0%;
+			--kb-cng-BIGFrameTextarea-Width: calc(100% - 2rem);
+
+			--kb-cng-ButtonON-BG-DarkMode: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-DarkMode: opacity(0.6);
+			--kb-cng-ButtonON-BG-AltSize: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-AltSize: opacity(0.6);
+			--kb-cng-ButtonON-BG-Tier1: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-Tier1: opacity(0.6);
+			--kb-cng-ButtonON-BG-Sticky: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-Sticky: opacity(0.6);
+			--kb-cng-ButtonON-BG-Popup: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-Popup: opacity(0.6);
+			--kb-cng-ButtonON-BG-Calc: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-Calc: opacity(0.6);
+			--kb-cng-ButtonON-BG-RightFrame: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-RightFrame: opacity(0.6);
+
+			--kb-cng-hueRotateAni: none;
+		}
+
+		.themeAltSizing {
+			--kb-cng-FontSizeText: 9pt;
+			--kb-cng-FontSizeHeading: 10pt;
+			--kb-cng-FontToggleButton: 10pt;
+			--kb-cng-BorderRadius: 0.5rem;
+			--kb-cng-BorderRadiusUI: 2px;
+			--kb-cng-Padding: 0.5rem;
+			--kb-cng-SelectPadding: 0.2em;
+			--kb-cng-BottomPadding: 0.2rem;
+			--kb-cng-CommentPadding: 0.5em 0.5em 0.25em 0.5em;
+			--kb-cng-CheckboxWidth: 1.4em;
+			--kb-cng-CheckboxHeight: 1.4em;
+			--kb-cng-CheckboxTickWidth: 1.5em;
+			--kb-cng-CheckboxTickHeight: 1.5em;
+
+			--kb-cng-ButtonON-BG-AltSize: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-AltSize: opacity(0.8);
+		}
+
+		.Tier1CommentToggled {
+			--kb-cng-T1CommentDisplay: none;
+
+			--kb-cng-ButtonON-BG-Tier1: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-Tier1: opacity(0.8);
+		}
+
+		.StickyNoteToggled {
+			--kb-cng-StickyNoteDisplay: hidden;
+			--kb-cng-StickyNote-Opacity: 0;
+			--kb-cng-StickyNote-Transform: translate3d(0px, -100px, 0px);
+			--kb-cng-StickyNote-Skew: skewY(-10deg);
+			--kb-cng-StickyNote-Left: calc(100% + 10rem);
+			--kb-cng-StickyNote-Top: calc(100% + 10rem);
+
+			--kb-cng-ButtonON-BG-Sticky: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-Sticky: opacity(0.8);
+		}
+
+		.PopupToggle-Visibility {
+			--kb-cng-PopupToggle-Visibility: hidden;
+			--kb-cng-PopupToggle-Opacity: 0;
+			--kb-cng-PopupToggle-Transform: translate3d(0px, -275px, 0px);
+			--kb-cng-PopupToggle-Skew: skewY(-15deg);
+
+			--kb-cng-ButtonON-BG-Popup: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-Popup: opacity(0.8);
+		}
+
+		.PopupTheme-Visibility {
+			--kb-cng-PopupTheme-Visibility: visible;
+			--kb-cng-PopupTheme-Opacity: 100;
+			--kb-cng-PopupTheme-Transform: translate3d(0px, 0px, 0px);
+			--kb-cng-PopupTheme-Skew: skewY(0deg);
+		}
+
+		.eoiCalculator-Visibility {
+			--kb-cng-Calculator-Visibility: visible;
+			--kb-cng-Calculator-Opacity: 100;
+			--kb-cng-Calculator-Transform: translate3d(0px, 0px, 0px);
+			--kb-cng-Calculator-Skew: skewY(0deg);
+
+			--kb-cng-ButtonON-BG-Calc: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-Calc: opacity(0.8);
+		}
+
+		.eoiCalculator-MinSuccess {
+			--kb-cng-Calculator-MinResult: var(--kb-cng-Gradient-eoiPass);
+			--kb-cng-Calculator-MinAnimateJump: shockwaveJump 1s ease-out 1;
+			--kb-cng-Calculator-MinAnimateShadow: shockwaveShadow 1.75s 0.6s ease-out 1;
+			--kb-cng-Calculator-MinShadow: 0 0 20px rgb(9 255 0);
+		}
+
+		.eoiCalculator-MajSuccess {
+			--kb-cng-Calculator-MajResult: var(--kb-cng-Gradient-eoiPass);
+			--kb-cng-Calculator-MajAnimateJump: shockwaveJump 1s ease-out 1;
+			--kb-cng-Calculator-MajAnimateShadow: shockwaveShadow 1.75s 0.6s ease-out 1;
+			--kb-cng-Calculator-MajShadow: 0 0 20px rgb(9 255 0);
+		}
+
+		.buttonCopy-Active {
+			--kb-cng-ThemeToast-color: var(--kb-cng-Blue2);
+			--kb-cng-ThemeToast-text: var(--kb-cng-Grey5);
+			--kb-cng-ThemeToast-gradient: var(--kb-cng-Gradient-CopyButton);
+			--kb-cng-ThemeToast-animation: shockwaveShadow-Copy 2.5s ease-out 1;
+		}
+
+		.buttonClear-Active {
+			--kb-cng-ThemeToast-color: var(--kb-cng-Red2);
+			--kb-cng-ThemeToast-text: var(--kb-cng-Grey5);
+			--kb-cng-ThemeToast-gradient: var(--kb-cng-Gradient-ClearButton);
+			--kb-cng-ThemeToast-animation: shockwaveShadow-Clear 2.5s ease-out 1;
+		}
+
+		.bigFrameRight-Toggled {
+			--kb-cng-BIGFrameMain-Width: calc(50% + 1rem);
+			--kb-cng-BIGFrameForm-Width: calc(50% + 1rem);
+			--kb-cng-BIGFrameRight-Width: 50%;
+			--kb-cng-BIGFrameRight-Visibility: visible;
+			--kb-cng-BIGFrameFooter-Width: calc(50% + 1rem);
+			--kb-cng-BIGFrameTogggles-Margin: calc(50% - 1rem);
+			--kb-cng-BIGFrameTextarea-Width: calc(50% - 2rem);
+			--kb-cng-ButtonON-BG-RightFrame: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-RightFrame: opacity(0.8);
+		}
+
+		/* ===== Themes ===== */
+		.themeAlt {
+			--kb-cng-ThemeBackground-color: var(--kb-cng-Dark);
+			--kb-cng-ThemeFooter-color: var(--kb-cng-Dark);
+			--kb-cng-ThemeBanner-color: var(--kb-cng-Dark3);
+			--kb-cng-ThemeDull-color: var(--kb-cng-TextDull);
+			--kb-cng-ThemeAlt-color: var(--kb-cng-Light);
+			--kb-cng-ThemeText-color: var(--kb-cng-Light);
+			--kb-cng-ThemeTextareaText-color: var(--kb-cng-Light);
+			--kb-cng-ThemeSelectText-color: var(--kb-cng-Light);
+			--kb-cng-ThemeShadow-type: var(--kb-cng-BoxShadowD);
+			--kb-cng-BoxShadowStickyNote-type: var(--kb-cng-BoxShadowStickyNoteD);
+			--kb-cng-BoxShadowInsetCom-type: var(--kb-cng-BoxShadowInsetComD);
+			--kb-cng-BoxShadowHoverFormat-type: var(--kb-cng-BoxShadowHoverFormatD);
+			--kb-cng-BoxShadowInsetCheck-type: var(--kb-cng-BoxShadowInsetCheckD);
+			--kb-cng-ThemeLink-color: var(--kb-cng-ThemeLink-colorD);
+			--kb-cng-ThemeSelect-color: var(--kb-cng-Grey1);
+			--kb-cng-ThemeInput-color: var(--kb-cng-Grey1);
+			--kb-cng-ThemeTextarea-color: var(--kb-cng-Grey1);
+			--kb-cng-ThemeToast-color: var(--kb-cng-Dark3);
+			--kb-cng-ThemeHighlightText-color: var(--kb-cng-HighlightNoteAlt);
+			--kb-cng-ThemeHighlightTextGreen-color: var(--kb-cng-HighlightNoteGreenAlt);
+			--kb-cng-ThemeScrollBar: var(--kb-cng-Grey1);
+			--kb-cng-ThemeScrollTrack: var(--kb-cng-Dark3);
+			--kb-cng-ButtonShadow-color: var(--kb-cng-GreyVarD);
+
+			--kb-cng-ButtonON-BG-DarkMode: var(--kb-cng-Grey2);
+			--kb-cng-ButtonON-Op-DarkMode: opacity(0.8);
+
+			--kb-cng-AccordionText-color: var(--kb-cng-White);
+			--kb-cng-AccordionBackground-active: var(--kb-cng-Dark2);
+			--kb-cng-AccordionBackground-hover: var(--kb-cng-Dark2);
+			--kb-cng-AccordionBackground-normal: var(--kb-cng-Dark3);
+			--kb-cng-AccordionBoxShadow-normal: 0px 5px 10px 2px #1c1934,
+				2px 4px #1c1934;
+			--kb-cng-AccordionBoxShadow-active: 0px 5px 10px 2px #1c1934,
+				0px 0px 2px #1c1934;
+		}
+
+		.secretChanges {
+			--kb-cng-fontFamily: monospace;
+			--kb-cng-ThemeBackground-color: #bfbcb3;
+			--kb-cng-ThemeFooter-color: #bfbcb3;
+			--kb-cng-ThemeBanner-color: #e51e2b;
+			--kb-cng-ThemeDull-color: var(--kb-cng-TextDull);
+			--kb-cng-ThemeAlt-color: var(--kb-cng-Light);
+			--kb-cng-ThemeText-color: var(--kb-cng-Dark);
+			--kb-cng-ThemeTextareaText-color: var(--kb-cng-Light);
+			--kb-cng-ThemeSelectText-color: var(--kb-cng-Light);
+			--kb-cng-ThemeToast-color: var(--kb-cng-Dark3);
+			--kb-cng-ThemeShadow-type: var(--kb-cng-BoxShadowD);
+			--kb-cng-BoxShadowStickyNote-type: var(--kb-cng-BoxShadowStickyNoteD);
+			--kb-cng-BoxShadowInsetCom-type: var(--kb-cng-BoxShadowInsetComD);
+			--kb-cng-BoxShadowHoverFormat-type: var(--kb-cng-BoxShadowHoverFormatD);
+			--kb-cng-BoxShadowInsetCheck-type: inset 10px 10px 30px rgb(50 22 22 / 50%),
+				inset -10px -10px 30px rgb(72 51 51 / 50%);
+			--kb-cng-ThemeLink-color: var(--kb-cng-ThemeLink-color);
+			--kb-cng-ThemeSelect-color: var(--kb-cng-Grey1);
+			--kb-cng-ThemeInput-color: var(--kb-cng-Grey1);
+			--kb-cng-ThemeTextarea-color: var(--kb-cng-Grey1);
+			--kb-cng-ThemeHighlightText-color: var(--kb-cng-HighlightNoteAlt);
+			--kb-cng-ThemeHighlightTextGreen-color: var(--kb-cng-HighlightNoteGreenAlt);
+			--kb-cng-ThemeScrollBar: var(--kb-cng-Grey1);
+			--kb-cng-ThemeScrollTrack: #e51e2b;
+			--kb-cng-ButtonShadow-color: var(--kb-cng-GreyVarD);
+
+			--kb-cng-AccordionText-color: var(--kb-cng-White);
+			--kb-cng-AccordionBackground-active: var(--kb-cng-Dark2);
+			--kb-cng-AccordionBackground-hover: var(--kb-cng-Dark2);
+			--kb-cng-AccordionBackground-normal: var(--kb-cng-Dark3);
+			--kb-cng-AccordionBoxShadow-normal: 0px 5px 10px 2px #bfbcb3,
+				2px 4px #bfbcb3;
+			--kb-cng-AccordionBoxShadow-active: 0px 5px 10px 2px #bfbcb3,
+				0px 0px 2px #bfbcb3;
+		}
+
+		.themeForrest {
+			--kb-cng-fontFamily: system-ui;
+			--kb-cng-ThemeBackground-color: rgb(218, 215, 205);
+			--kb-cng-ThemeFooter-color: rgb(218 215 205 / 80%);
+			--kb-cng-ThemeBanner-color: rgb(88 129 87 / 80%);
+			--kb-cng-ThemeDull-color: var(--kb-cng-TextDull);
+			--kb-cng-ThemeAlt-color: var(--kb-cng-Dark);
+			--kb-cng-ThemeText-color: var(--kb-cng-Dark);
+			--kb-cng-ThemeTextareaText-color: var(--kb-cng-Dark);
+			--kb-cng-ThemeSelectText-color: var(--kb-cng-Dark);
+			--kb-cng-ThemeToast-color: rgb(218 215 205 / 80%);
+			--kb-cng-ThemeShadow-type: 0px 5px 20px 5px rgb(88 129 87 / 80%);
+			--kb-cng-BoxShadowStickyNote-type: 0px 5px 20px 5px rgb(88 129 87 / 40%);
+			--kb-cng-BoxShadowInsetCom-type: var(--kb-cng-BoxShadowInsetCom);
+			--kb-cng-BoxShadowHoverFormat-type: var(--kb-cng-BoxShadowHoverFormat);
+			--kb-cng-BoxShadowInsetCheck-type: inset 10px 10px 30px rgba(50, 22, 22, 0.3),
+				inset -10px -10px 30px rgb(72 51 51 / 40%);
+			--kb-cng-ThemeLink-color: var(--kb-cng-ThemeLink-color);
+			--kb-cng-ThemeSelect-color: rgb(163, 176, 140);
+			--kb-cng-ThemeInput-color: rgb(163, 176, 140);
+			--kb-cng-ThemeTextarea-color: rgb(163, 176, 140);
+			--kb-cng-ThemeHighlightText-color: var(--kb-cng-HighlightNoteAlt);
+			--kb-cng-ThemeHighlightTextGreen-color: var(--kb-cng-HighlightNoteGreenAlt);
+			--kb-cng-ThemeScrollBar: var(--kb-cng-Grey1);
+			--kb-cng-ThemeScrollTrack: rgb(163, 176, 140);
+			--kb-cng-ButtonShadow-color: var(--kb-cng-GreyVarD);
+			--kb-cng-OutlineHover: #2dc657;
+		}
+
+		.themeOcean {
+			--kb-cng-fontFamily: system-ui;
+			--kb-cng-ThemeBackground-color: #0e2d54;
+			--kb-cng-ThemeFooter-color: #0e2d54;
+			--kb-cng-ThemeBanner-color: #145380;
+			--kb-cng-ThemeDull-color: var(--kb-cng-TextDull);
+			--kb-cng-ThemeAlt-color: rgb(223, 223, 223);
+			--kb-cng-ThemeText-color: rgb(223, 223, 223);
+			--kb-cng-ThemeTextareaText-color: rgb(223, 223, 223);
+			--kb-cng-ThemeSelectText-color: rgb(223, 223, 223);
+			--kb-cng-ThemeToast-color: var(--kb-cng-Dark3);
+			--kb-cng-ThemeShadow-type: 0px 5px 20px 10px rgba(59, 58, 90, 0.5);
+			--kb-cng-BoxShadowStickyNote-type: var(--kb-cng-BoxShadowStickyNoteD);
+			--kb-cng-BoxShadowInsetCom-type: var(--kb-cng-BoxShadowInsetComD);
+			--kb-cng-BoxShadowHoverFormat-type: var(--kb-cng-BoxShadowHoverFormatD);
+			--kb-cng-BoxShadowInsetCheck-type: inset 10px 10px 30px rgba(50, 22, 22, 0.3),
+				inset -10px -10px 30px rgb(72 51 51 / 40%);
+			--kb-cng-ThemeLink-color: var(--kb-cng-ThemeLink-color);
+			--kb-cng-ThemeSelect-color: #0d3450;
+			--kb-cng-ThemeInput-color: #0d3450;
+			--kb-cng-ThemeTextarea-color: #0d3450;
+			--kb-cng-ThemeHighlightText-color: var(--kb-cng-HighlightNoteAlt);
+			--kb-cng-ThemeHighlightTextGreen-color: var(--kb-cng-HighlightNoteGreenAlt);
+			--kb-cng-ThemeScrollBar: var(--kb-cng-Grey1);
+			--kb-cng-ThemeScrollTrack: #0e2d54;
+			--kb-cng-ButtonShadow-color: var(--kb-cng-GreyVarD);
+			--kb-cng-OutlineHover: #2d7cc6;
+			--kb-cng-OutlineDefault: rgb(223 223 223 / 11%);
+			--kb-cng-BorderRadiusUI: 0.75rem;
+		}
+
+		.themeMainframe {
+			--kb-cng-fontFamily: monospace;
+			--kb-cng-ThemeBackground-color: #030303;
+			--kb-cng-ThemeFooter-color: #030303;
+			--kb-cng-ThemeBanner-color: #141414;
+			--kb-cng-ThemeDull-color: var(--kb-cng-TextDull);
+			--kb-cng-ThemeAlt-color: rgb(6, 146, 18);
+			--kb-cng-ThemeText-color: rgb(8, 143, 19);
+			--kb-cng-ThemeTextareaText-color: rgb(168 255 175);
+			--kb-cng-ThemeSelectText-color: rgb(168 255 175);
+			--kb-cng-ThemeToast-color: var(--kb-cng-Dark3);
+			--kb-cng-ThemeShadow-type: 0px 5px 20px 10px rgba(58, 90, 62, 0.5);
+			--kb-cng-BoxShadowStickyNote-type: var(--kb-cng-BoxShadowStickyNoteD);
+			--kb-cng-BoxShadowInsetCom-type: var(--kb-cng-BoxShadowInsetComD);
+			--kb-cng-BoxShadowHoverFormat-type: var(--kb-cng-BoxShadowHoverFormatD);
+			--kb-cng-BoxShadowInsetCheck-type: inset 10px 10px 30px rgba(22, 50, 29, 0.3),
+				inset -10px -10px 30px rgba(51, 72, 56, 0.4);
+			--kb-cng-ThemeLink-color: var(--kb-cng-ThemeLink-color);
+			--kb-cng-ThemeSelect-color: #0d5018;
+			--kb-cng-ThemeInput-color: #0d501c;
+			--kb-cng-ThemeTextarea-color: #0d5018;
+			--kb-cng-ThemeHighlightText-color: rgb(88 88 88 / 50%);
+			--kb-cng-ThemeHighlightTextGreen-color: rgba(69, 65, 73, 0.5);
+			--kb-cng-ThemeScrollBar: var(--kb-cng-Grey1);
+			--kb-cng-ThemeScrollTrack: #0e5417;
+			--kb-cng-ButtonShadow-color: var(--kb-cng-GreyVarD);
+			--kb-cng-OutlineHover: #2dc65b;
+			--kb-cng-OutlineDefault: rgba(223, 223, 223, 0.11);
+			--kb-cng-BorderRadiusUI: 0.7rem;
+		}
+
+		.themeGradientTypeA {
+			--kb-cng-fontFamily: sans-serif;
+			--kb-cng-ThemeBackground-color: linear-gradient(335deg,
+					rgba(0, 116, 54, 1) 0%,
+					rgba(0, 120, 128, 1) 47%,
+					rgba(107, 0, 161, 1) 100%);
+			--kb-cng-ThemeFooter-color: rgba(40, 0, 43, 0.65);
+			--kb-cng-ThemeBanner-color: rgba(40, 0, 43, 0.65);
+			--kb-cng-ThemeDull-color: var(--kb-cng-TextDull);
+			--kb-cng-ThemeAlt-color: rgb(243, 243, 243);
+			--kb-cng-ThemeText-color: rgb(243, 243, 243);
+			--kb-cng-ThemeTextareaText-color: rgb(243, 243, 243);
+			--kb-cng-ThemeToast-color: var(--kb-cng-Dark3);
+			--kb-cng-ThemeSelectText-color: rgb(243, 243, 243);
+			--kb-cng-ThemeShadow-type: 0px 5px 20px 10px rgba(58, 90, 62, 0.5);
+			--kb-cng-BoxShadowStickyNote-type: var(--kb-cng-BoxShadowStickyNoteD);
+			--kb-cng-BoxShadowInsetCom-type: inset 10px 10px 30px rgb(121 86 205 / 10%),
+				inset -10px -10px 30px rgb(51 72 72 / 30%);
+			--kb-cng-BoxShadowHoverFormat-type: inset 5px 5px 15px rgba(109, 116, 179, 0.1),
+				inset -5px -5px 15px rgba(144, 72, 184, 0.1);
+			--kb-cng-BoxShadowInsetCheck-type: inset 5px 5px 15px rgba(52, 202, 170, 0.1),
+				inset -5px -5px 15px rgba(111, 211, 134, 0.1);
+			--kb-cng-ThemeLink-color: var(--kb-cng-ThemeLink-color);
+			--kb-cng-ThemeSelect-color: rgb(0 0 0 / 35%);
+			--kb-cng-ThemeInput-color: rgb(0 0 0 / 35%);
+			--kb-cng-ThemeTextarea-color: rgb(0 0 0 / 35%);
+			--kb-cng-ThemeHighlightText-color: rgb(51 173 193 / 50%);
+			--kb-cng-ThemeHighlightTextGreen-color: rgb(51 193 88 / 50%);
+			--kb-cng-ThemeScrollBar: var(--kb-cng-Grey1);
+			--kb-cng-ThemeScrollTrack: rgba(14, 0, 65, 0.85);
+			--kb-cng-ButtonShadow-color: var(--kb-cng-GreyVarD);
+			--kb-cng-OutlineHover: rgba(155, 19, 209, 0.5);
+			--kb-cng-OutlineDefault: rgba(223, 223, 223, 0.11);
+			--kb-cng-BorderRadiusUI: 0.75rem;
+		}
+
+		.themeGradientTypeB {
+			--kb-cng-fontFamily: sans-serif;
+			--kb-cng-ThemeBackground-color: linear-gradient(335deg,
+					rgba(0, 47, 116, 1) 0%,
+					rgba(77, 0, 128, 1) 47%,
+					rgba(161, 0, 90, 1) 100%);
+			--kb-cng-ThemeFooter-color: rgba(43, 0, 27, 0.65);
+			--kb-cng-ThemeBanner-color: rgba(43, 0, 27, 0.65);
+			--kb-cng-ThemeDull-color: var(--kb-cng-TextDull);
+			--kb-cng-ThemeAlt-color: rgb(243, 243, 243);
+			--kb-cng-ThemeText-color: rgb(243, 243, 243);
+			--kb-cng-ThemeTextareaText-color: rgb(243, 243, 243);
+			--kb-cng-ThemeToast-color: var(--kb-cng-Dark3);
+			--kb-cng-ThemeSelectText-color: rgb(243, 243, 243);
+			--kb-cng-ThemeShadow-type: 0px 5px 20px 10px rgba(58, 85, 90, 0.5);
+			--kb-cng-BoxShadowStickyNote-type: var(--kb-cng-BoxShadowStickyNoteD);
+			--kb-cng-BoxShadowInsetCom-type: inset 10px 10px 30px rgba(94, 86, 205, 0.1),
+				inset -10px -10px 30px rgba(72, 51, 69, 0.3);
+			--kb-cng-BoxShadowHoverFormat-type: inset 5px 5px 15px rgba(109, 153, 179, 0.1),
+				inset -5px -5px 15px rgba(144, 72, 184, 0.1);
+			--kb-cng-BoxShadowInsetCheck-type: inset 5px 5px 15px rgba(52, 202, 170, 0.1),
+				inset -5px -5px 15px rgba(111, 211, 211, 0.1);
+			--kb-cng-ThemeLink-color: var(--kb-cng-ThemeLink-color);
+			--kb-cng-ThemeSelect-color: rgb(0 0 0 / 35%);
+			--kb-cng-ThemeInput-color: rgb(0 0 0 / 35%);
+			--kb-cng-ThemeTextarea-color: rgb(0 0 0 / 35%);
+			--kb-cng-ThemeHighlightText-color: rgba(51, 165, 193, 0.5);
+			--kb-cng-ThemeHighlightTextGreen-color: rgba(51, 193, 58, 0.5);
+			--kb-cng-ThemeScrollBar: var(--kb-cng-Grey1);
+			--kb-cng-ThemeScrollTrack: rgba(14, 0, 65, 0.85);
+			--kb-cng-ButtonShadow-color: var(--kb-cng-GreyVarD);
+			--kb-cng-OutlineHover: rgba(19, 187, 209, 0.5);
+			--kb-cng-OutlineDefault: rgba(223, 223, 223, 0.11);
+			--kb-cng-BorderRadiusUI: 0.75rem;
+		}
+
+		/* ===== Scrollbar CSS ===== */
+		/* Firefox */
+		* {
+			scrollbar-width: auto;
+			scrollbar-color: var(--kb-cng-ThemeScrollBar);
+		}
+
+		/* Chrome, Edge, and Safari */
+		*::-webkit-scrollbar {
+			width: 16px;
+		}
+
+		*::-webkit-scrollbar-track {
+			background: var(--kb-cng-ThemeScrollTrack);
+		}
+
+		*::-webkit-scrollbar-thumb {
+			background: var(--kb-cng-ThemeScrollBar);
+			background-color: var(--kb-cng-ThemeScrollBar);
+			border: 0px solid transparent;
+			box-shadow: var(--kb-cng-BoxShadow);
+			outline: 2px solid transparent;
+		}
+
+		/* ===== Accordions ==== */
+		.kb-cng-topSpacer {
+			margin-top: 7rem;
+			padding: 0.25rem;
+		}
+
+		.kb-cng-sectionTitle {
+			color: var(--kb-cng-AccordionText-color);
+			background: var(--kb-cng-AccordionBackground-normal);
+			width: inherit;
+			border: none;
+			text-align: left;
+			outline: none;
+			font-size: var(--kb-cng-FontSizeHeading);
+			transition: 0.2s;
+			margin-left: 1rem;
+			margin-right: 1rem;
+			margin-bottom: var(--kb-cng-BottomPadding);
+			font-weight: bold;
+			border-radius: var(--kb-cng-BorderRadius);
+			padding: var(--kb-cng-Padding);
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			box-shadow: var(--kb-cng-AccordionBoxShadow-normal);
+		}
+
+		.kb-cng-accordion {
+			color: var(--kb-cng-AccordionText-color);
+			background: var(--kb-cng-AccordionBackground-normal);
+			cursor: pointer;
+			width: calc(100% - 2rem);
+			border: none;
+			text-align: left;
+			outline: none;
+			padding: var(--kb-cng-Padding);
+			font-size: var(--kb-cng-FontSizeHeading);
+			transition: 0.02s;
+			margin-left: 1rem;
+			margin-right: 1rem;
+			margin-bottom: var(--kb-cng-BottomPadding);
+			box-shadow: var(--kb-cng-AccordionBoxShadow-normal);
+		}
+
+		.kb-cng-active,
+		.kb-cng-accordion:hover {
+			background: var(--kb-cng-AccordionBackground-active);
+			transition: 0.04s ease-in-out;
+			box-shadow: var(--kb-cng-AccordionBoxShadow-active);
+		}
+
+		.kb-cng-accordion:after {
+			content: "\002B";
+			color: var(--kb-cng-AccordionText-color);
+			font-weight: bold;
+			float: right;
+			margin-left: 5px;
+		}
+
+		.kb-cng-active:after {
+			content: "\2212";
+		}
+
+		.kb-cng-panel {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+			border-radius: var(--kb-cng-BorderRadius);
+		}
+
+		/* Styles */
+
+		body {
+			font-family: var(--kb-cng-fontFamily);
+			font-size: var(--kb-cng-FontSizeText);
+			line-height: 1.5;
+			color: var(--kb-cng-ThemeDull-color);
+			background: var(--kb-cng-ThemeBackground-color);
+			display: flex;
+			flex-direction: column;
+			justify-content: stretch;
+			min-height: 100vh;
+		}
+
+		h2,
+		h3,
+		h5,
+		h6,
+		p {
+			margin: 0 1rem;
+			color: var(--kb-cng-ThemeText-color);
+		}
+
+		h4 {
+			margin: 0.35rem 1rem;
+			color: var(--kb-cng-ThemeText-color);
+			font-size: var(--kb-cng-FontSizeText);
+		}
+
+		hr {
+			margin-left: 1rem;
+			margin-right: 1rem;
+			border-color: var(--kb-cng-Grey4);
+			background-color: var(--kb-cng-Grey4);
+			filter: opacity(0.2);
+			border: 1px solid;
+			border-radius: 1em;
+		}
+
+		a {
+			color: var(--kb-cng-ThemeLink-color);
+		}
+
+		ul {
+			list-style-type: circle;
+			margin: 0 1rem;
+			color: var(--kb-cng-ThemeText-color);
+			font-size: var(--kb-cng-FontSizeText);
+		}
+
+		:focus-visible {
+			outline: 0px solid transparent;
+		}
+
+		.toggleModeFloat {
+			position: fixed;
+			right: 5px;
+			top: 5px;
+			z-index: 1;
+			margin-right: var(--kb-cng-BIGFrameTogggles-Margin);
+			text-align: end;
+			transition: margin 0.925s ease;
+		}
+
+		#wrapper {
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		@keyframes gradientMove {
+			0% {
+				background-position: 0% 50%;
+			}
+
+			50% {
+				background-position: 100% 50%;
+			}
+
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+
+		@keyframes hueRotate {
+			0% {
+				filter: hue-rotate(0deg);
+			}
+
+			50% {
+				filter: hue-rotate(360deg);
+			}
+
+			100% {
+				filter: hue-rotate(720deg);
+			}
+		}
+
+		@keyframes slideUp {
+			0% {
+				transform: translate(-50%, 100%);
+				opacity: 0;
+				animation-timing-function: cubic-bezier(0, 1, 0.8, 1);
+			}
+
+			50% {
+				transform: translate(-50%, 0);
+				opacity: 1;
+				animation-timing-function: cubic-bezier(0.4, 0, 1, 0);
+			}
+
+			100% {
+				transform: translate(-50%, -300%);
+				opacity: 0;
+				display: none;
+			}
+		}
+
+		@keyframes jelly {
+			from {
+				transform: scale(1, 1);
+			}
+
+			30% {
+				transform: scale(1.08, 0.92);
+			}
+
+			40% {
+				transform: scale(0.92, 1.08);
+			}
+
+			50% {
+				transform: scale(1.03, 0.97);
+			}
+
+			65% {
+				transform: scale(0.97, 1.03);
+			}
+
+			75% {
+				transform: scale(1.03, 0.97);
+			}
+
+			to {
+				transform: scale(1, 1);
+			}
+		}
+
+		@keyframes shockwaveJump {
+			0% {
+				transform: scale(1);
+			}
+
+			40% {
+				transform: scale(1.08);
+			}
+
+			50% {
+				transform: scale(0.98);
+			}
+
+			55% {
+				transform: scale(1.02);
+			}
+
+			60% {
+				transform: scale(0.98);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		@keyframes shockwaveShadow {
+			0% {
+				transform: scale(1);
+				box-shadow: 0 0 2px rgb(9, 255, 0),
+					inset 0 0 1px rgb(9, 255, 0);
+			}
+
+			95% {
+				box-shadow: 10px 10px 300px rgba(0, 255, 85, 0),
+					inset 10px 10px 225px rgba(0, 255, 85, 0);
+			}
+
+			100% {
+				transform: scale(1.75);
+			}
+		}
+
+		@keyframes shockwaveShadow-Copy {
+			0% {
+				box-shadow: 0 0 10px var(--kb-cng-Blue1);
+			}
+
+			75% {
+				box-shadow: var(--kb-cng-ThemeToast-shadowCopy);
+			}
+
+			100% {
+				box-shadow: 0 0 5px var(--kb-cng-Blue3);
+			}
+		}
+
+		@keyframes shockwaveShadow-Clear {
+			0% {
+				box-shadow: 0 0 2px var(--kb-cng-Red1);
+			}
+
+			75% {
+				box-shadow: var(--kb-cng-ThemeToast-shadowClear);
+			}
+
+			100% {
+				box-shadow: 0 0 5px var(--kb-cng-Red3);
+			}
+		}
+
+		/* Livepro Call Flow Checklist */
+
+		.kb-cng-iFrame-embeddedFrame {
+			min-height: 400px;
+			min-width: 275px;
+			height: 100%;
+			width: 100%;
+		}
+
+		#kb-cng-BIGFrameRight {
+			position: fixed;
+			overflow: auto;
+			height: 100%;
+			width: var(--kb-cng-BIGFrameRight-Width);
+			right: -1rem;
+			transition: width 0.9s ease;
+			visibility: var(--kb-cng-BIGFrameRight-Visibility);
+		}
+
+		#kb-cng-BIGFrameMain {
+			overflow: auto;
+			height: 100%;
+			width: var(--kb-cng-BIGFrameMain-Width);
+			left: 0;
+			transition: width 0.9s ease;
+		}
+
+		/* Buttons */
+
+		button {
+			background-color: var(--kb-cng-Blue1);
+			font-weight: bold;
+			color: var(--kb-cng-White);
+			border: none;
+			border-radius: var(--kb-cng-BorderRadius);
+			padding: var(--kb-cng-Padding);
+			font-size: inherit;
+			cursor: pointer;
+			flex-grow: 1;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			box-shadow: 0px 5px 10px 2px var(--kb-cng-ButtonShadow-color),
+				2px 4px var(--kb-cng-ButtonShadow-color);
+			background-size: 105%;
+		}
+
+		button:hover {
+			background-color: var(--kb-cng-Blue2);
+			transition: 0.04s 0.4s;
+		}
+
+		button:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#clear {
+			background-color: var(--kb-cng-Red1);
+			box-shadow: 0px 5px 10px 2px rgb(243 4 4 / 70%),
+				2px 4px 1px var(--kb-cng-ButtonShadow-color);
+		}
+
+		#clear:hover {
+			background-color: var(--kb-cng-Red2);
+			transition: 0.04s 0.4s;
+			background: var(--kb-cng-Graident-ClearButton);
+			animation: gradientMove 5s infinite;
+			background-size: 800% 400%;
+			box-shadow: 0px 5px 10px 2px rgb(243 4 4 / 70%),
+				2px 4px 2px var(--kb-cng-ButtonShadow-color);
+		}
+
+		#clear:active {
+			transform: translate(1px, 1px);
+			filter: brightness(0.9);
+			background-color: var(--kb-cng-Red3);
+			transition: 0.01s 0.01s;
+			box-shadow: 0px 5px 10px 2px rgb(243 4 4 / 70%),
+				0px 0px 2px var(--kb-cng-ButtonShadow-color);
+		}
+
+		#copy {
+			background-color: var(--kb-cng-Blue1);
+			box-shadow: 0px 5px 10px 2px rgb(0 28 163 / 70%),
+				2px 4px 1px var(--kb-cng-ButtonShadow-color);
+		}
+
+		#copy:hover {
+			background-color: var(--kb-cng-Blue2);
+			transition: 0.04s 0.4s;
+			background: var(--kb-cng-Gradient-CopyButton);
+			animation: gradientMove 5s infinite;
+			background-size: 800% 400%;
+			box-shadow: 0px 5px 10px 2px rgb(0 28 163 / 70%),
+				2px 4px 2px var(--kb-cng-ButtonShadow-color);
+		}
+
+		#copy:active {
+			transform: translate(1px, 1px);
+			filter: brightness(0.9);
+			background-color: var(--kb-cng-Blue3);
+			transition: 0.01s 0.01s;
+			box-shadow: 0px 5px 10px 2px rgb(0 28 163 / 70%),
+				0px 0px 2px var(--kb-cng-ButtonShadow-color);
+		}
+
+		/* toggle mode buttons */
+
+		#toggleModeButton {
+			background: var(--kb-cng-Grey2);
+			padding: 5px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: opacity(0.6);
+			font-size: var(--kb-cng-FontToggleButton);
+		}
+
+		#toggleModeButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+		}
+
+		#toggleModeButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#stickyTMButton {
+			background: var(--kb-cng-ButtonON-BG-Sticky);
+			padding: 5px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: var(--kb-cng-ButtonON-Op-Sticky);
+			font-size: var(--kb-cng-FontToggleButton);
+		}
+
+		#stickyTMButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+			text-shadow: 1px 1px 7.5px var(--kb-cng-StickyNoteYellow);
+		}
+
+		#stickyTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#frameRightTMButton {
+			background: var(--kb-cng-ButtonON-BG-RightFrame);
+			padding: 5px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: var(--kb-cng-ButtonON-Op-RightFrame);
+			font-size: var(--kb-cng-FontToggleButton);
+		}
+
+		#frameRightTMButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+			text-shadow: 1px 1px 7.5px var(--kb-cng-Orange3);
+		}
+
+		#frameRightTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#themeSelectTMButton {
+			background: var(--kb-cng-ButtonON-BG-DarkMode);
+			padding: 5px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: var(--kb-cng-ButtonON-Op-DarkMode);
+			font-size: var(--kb-cng-FontToggleButton);
+		}
+
+		#themeSelectTMButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+			text-shadow: 1px 1px 7.5px var(--kb-cng-Orange3);
+		}
+
+		#themeSelectTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#compactTMButton {
+			background: var(--kb-cng-ButtonON-BG-AltSize);
+			padding: 5px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: var(--kb-cng-ButtonON-Op-AltSize);
+			font-size: var(--kb-cng-FontToggleButton);
+		}
+
+		#compactTMButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+			text-shadow: 1px 1px 7.5px var(--kb-cng-Grey2);
+		}
+
+		#compactTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#tier1TMButton {
+			background: var(--kb-cng-ButtonON-BG-Tier1);
+			padding: 5px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: var(--kb-cng-ButtonON-Op-Tier1);
+			font-size: var(--kb-cng-FontToggleButton);
+		}
+
+		#tier1TMButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+			text-shadow: 1px 1px 7.5px var(--kb-cng-Green1);
+		}
+
+		#tier1TMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#Ext-eoiCalcTMButton {
+			background: var(--kb-cng-ButtonON-BG-Calc);
+			padding: 5px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: var(--kb-cng-ButtonON-Op-Calc);
+			font-size: var(--kb-cng-FontToggleButton);
+		}
+
+		#Ext-eoiCalcTMButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+			text-shadow: 1px 1px 7.5px var(--kb-cng-Green1);
+		}
+
+		#Ext-eoiCalcTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		.toggleModeEOICalcFloat {
+			position: fixed;
+			bottom: 1.5rem;
+			right: 2.5rem;
+			visibility: var(--kb-cng-Calculator-Visibility);
+			z-index: 10;
+		}
+
+		#Int-eoiCalcTMButton {
+			background: var(--kb-cng-Grey2);
+			padding: 5px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: opacity(0.95);
+			font-size: var(--kb-cng-FontToggleButton);
+			visibility: var(--kb-cng-Calculator-Visibility);
+		}
+
+		#Int-eoiCalcTMButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+			text-shadow: 1px 1px 7.5px var(--kb-cng-Green1);
+		}
+
+		#Int-eoiCalcTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#Res-eoiCalcTMButton {
+			background: var(--kb-cng-Grey2);
+			padding: 5px;
+			padding-right: 9px;
+			border-radius: 4px;
+			min-width: 25px;
+			filter: opacity(0.95);
+			font-size: var(--kb-cng-FontToggleButton);
+			visibility: var(--kb-cng-Calculator-Visibility);
+			margin-right: 2px;
+		}
+
+		#Res-eoiCalcTMButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+			text-shadow: 1px 1px 7.5px var(--kb-cng-Green1);
+		}
+
+		#Res-eoiCalcTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		#understandTMButton {
+			background-color: var(--kb-cng-Blue1);
+			font-weight: bold;
+			color: var(--kb-cng-White);
+			border: none;
+			border-radius: var(--kb-cng-BorderRadius);
+			padding: var(--kb-cng-Padding);
+			font-size: inherit;
+			cursor: pointer;
+			flex-grow: 1;
+			box-shadow: 0px 10px 15px 12px rgba(0, 0, 0, 0.1);
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		#understandTMButton:hover {
+			background-color: var(--kb-cng-Blue2);
+			transition: 0.04s 0.4s;
+			background: var(--kb-cng-Gradient-CopyButton);
+			animation: gradientMove 5s infinite;
+			background-size: 800% 400%;
+			box-shadow: 0 0 2px 10px rgba(105, 76, 234, 0.1);
+		}
+
+		#understandTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		/* Popup for Understanding */
+
+		.kb-cng-PopupUnderstand-Blur {
+			visibility: var(--kb-cng-PopupToggle-Visibility);
+			opacity: var(--kb-cng-PopupToggle-Opacity);
+			width: 100%;
+			height: 100%;
+			z-index: 12;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: fixed;
+			display: inline-block;
+			background: rgb(0 0 0 / 50%);
+			-webkit-transition: all 0.85s ease-in-out;
+			-moz-transition: all 0.85s ease-in-out;
+			-o-transition: all 0.85s ease-in-out;
+			transition: all 0.85s ease-in-out;
+		}
+
+		.kb-cng-PopupUnderstand-Div {
+			visibility: var(--kb-cng-PopupToggle-Visibility);
+			opacity: var(--kb-cng-PopupToggle-Opacity);
+			transform: var(--kb-cng-PopupToggle-Transform) var(--kb-cng-PopupToggle-Skew);
+			display: inline-block;
+			position: fixed;
+			background: var(--kb-cng-ThemeBackground-color);
+			border-radius: var(--kb-cng-BorderRadius);
+			box-shadow: var(--kb-cng-BoxShadow);
+			width: calc(100% - 4rem);
+			max-width: 800px;
+			min-height: 250px;
+			z-index: 13;
+			margin: auto;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			padding: 0.2rem;
+			-webkit-transition: all 0.85s ease-in-out;
+			-moz-transition: all 0.85s ease-in-out;
+			-o-transition: all 0.85s ease-in-out;
+			transition: all 0.85s ease-in-out;
+			overflow-y: scroll;
+			max-height: 90%;
+		}
+
+		.kb-cng-PopupUnderstand-Text {
+			font-size: var(--kb-cng-FontSizeText);
+			padding: 0.1rem;
+		}
+
+		.understandButtonContainer {
+			padding: 0.5rem;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+
+		/* Popup for Theme Select */
+
+		.kb-cng-PopupThemeSelect-Blur {
+			visibility: var(--kb-cng-PopupTheme-Visibility);
+			opacity: var(--kb-cng-PopupTheme-Opacity);
+			width: 100%;
+			height: 100%;
+			z-index: 12;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: fixed;
+			display: inline-block;
+			background: rgb(0 0 0 / 50%);
+			-webkit-transition: all 0.85s ease-in-out;
+			-moz-transition: all 0.85s ease-in-out;
+			-o-transition: all 0.85s ease-in-out;
+			transition: all 0.85s ease-in-out;
+		}
+
+		.kb-cng-PopupThemeSelect-Div {
+			visibility: var(--kb-cng-PopupTheme-Visibility);
+			opacity: var(--kb-cng-PopupTheme-Opacity);
+			transform: var(--kb-cng-PopupTheme-Transform) var(--kb-cng-PopupTheme-Skew);
+			display: inline-block;
+			position: fixed;
+			background: var(--kb-cng-ThemeBackground-color);
+			border-radius: var(--kb-cng-BorderRadius);
+			box-shadow: var(--kb-cng-BoxShadow);
+			width: calc(100% - 4rem);
+			max-width: 500px;
+			min-height: 250px;
+			z-index: 13;
+			margin: auto;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			padding: 0.2rem;
+			-webkit-transition: all 0.85s ease-in-out;
+			-moz-transition: all 0.85s ease-in-out;
+			-o-transition: all 0.85s ease-in-out;
+			transition: all 0.85s ease-in-out;
+			overflow-y: scroll;
+			max-height: 90%;
+		}
+
+		.kb-cng-PopupThemeSelect-Text {
+			font-size: var(--kb-cng-FontSizeText);
+			padding: 0.1rem;
+		}
+
+		.themeSelectButtonContainer {
+			padding: 0.5rem;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+
+		#themeSelectCloseTMButton {
+			background-color: var(--kb-cng-Red1);
+			font-weight: bold;
+			color: var(--kb-cng-White);
+			border: none;
+			border-radius: var(--kb-cng-BorderRadius);
+			padding: var(--kb-cng-Padding);
+			font-size: inherit;
+			cursor: pointer;
+			flex-grow: 1;
+			box-shadow: 0px 10px 15px 12px rgba(0, 0, 0, 0.1);
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		#themeSelectCloseTMButton:hover {
+			background-color: var(--kb-cng-Red2);
+			transition: 0.04s 0.4s;
+			background: var(--kb-cng-Graident-ClearButton);
+			animation: gradientMove 5s infinite;
+			background-size: 800% 400%;
+			box-shadow: 0 0 2px 10px rgba(105, 76, 234, 0.1);
+		}
+
+		#themeSelectCloseTMButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		/* Theme Option Button */
+
+		#themeSelectOptionButton {
+			background: var(--kb-cng-Grey2);
+			padding: 1rem;
+			border-radius: 1rem;
+			min-width: 40px;
+			filter: opacity(1);
+			font-size: var(--kb-cng-FontThemeOption);
+			margin: 0.5rem;
+		}
+
+		#themeSelectOptionButton:hover {
+			background: var(--kb-cng-Graident-ToggleButton);
+			filter: opacity(1);
+			border: 0px solid transparent;
+			transition: 0.01s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type);
+			transform: scale(1.05);
+		}
+
+		#themeSelectOptionButton:active {
+			transform: translate(1px, 1px);
+			transition: 0.01s 0.01s;
+		}
+
+		/* Sticky Note*/
+
+		#kb-cng-StickyNote {
+			position: fixed;
+			z-index: 9;
+			background-color: var(--kb-cng-StickyNoteColor);
+			border: 0px solid transparent;
+			text-align: center;
+			visibility: var(--kb-cng-StickyNote-Visibility);
+			box-shadow: var(--kb-cng-BoxShadowStickyNote-type);
+			box-sizing: border-box;
+			border-radius: 0.5rem;
+			overflow: hidden;
+			transform: var(--kb-cng-StickyNote-Skew) var(--kb-cng-StickyNote-Transform);
+			opacity: var(--kb-cng-StickyNote-Opacity);
+			transition: transform 0.35s ease-in-out,
+				opacity 0.35s ease-in-out;
+			top: var(--kb-cng-StickyNote-Top);
+			left: var(--kb-cng-StickyNote-Left);
+		}
+
+		#kb-cng-StickyNoteheader {
+			padding: 0.5rem;
+			cursor: move;
+			z-index: 10;
+			background-color: rgba(73, 73, 73, 0.075);
+			color: black;
+			font-weight: 600;
+		}
+
+		#kb-cng-StickyNoteInput {
+			background-color: var(--kb-cng-StickyNoteColor);
+			width: calc(100% - 0.5rem);
+			border: none;
+			padding: 0.5rem;
+			max-width: calc(100% - 0.5rem);
+			min-width: calc(100% - 0.5rem);
+			min-height: 10rem;
+			font: inherit;
+			margin-left: 0.25rem;
+			margin-right: 0.25rem;
+			border-radius: var(--kb-cng-BorderRadiusUI);
+			color: black;
+			box-shadow: none;
+			transition: 0s ease;
+		}
+
+		#kb-cng-StickyNoteInput:hover {
+			outline: 0px solid transparent;
+			outline-width: Medium;
+			border: 0px solid transparent;
+			transition: 0s ease;
+			box-shadow: none;
+		}
+
+		#kb-cng-StickyNoteInput:focus-visible {
+			outline: 0px solid transparent;
+			outline-width: Medium;
+			border: 0px solid transparent;
+			transition: 0s ease;
+			box-shadow: none;
+		}
+
+		#kb-cng-StickyNoteInput:active {
+			border: 0px solid transparent;
+			outline: 0px solid transparent;
+		}
+
+		.kb-cng-FreeTextSticky {
+			background-color: var(--kb-cng-ThemeBackground-color);
+			background: var(--kb-cng-ThemeBackground-color);
+			padding: 1rem;
+			border: none;
+			contain: content;
+			height: 140px;
+			overflow-y: scroll;
+		}
+
+		/* Main Styles */
+
+		.kb-cng-TitleBar {
+			background-color: var(--kb-cng-ThemeBanner-color);
+			background: var(--kb-cng-ThemeBanner-color);
+			padding: 0.5rem;
+			box-shadow: var(--kb-cng-ThemeShadow-type);
+			border: 0px;
+			contain: content;
+			border-radius: var(--kb-cng-BorderRadius);
+			margin: 0.5rem;
+
+		}
+
+		.kb-cng-TitleNote {
+			padding: 0.5rem;
+			border: 0px;
+			border-bottom: 3px solid var(--kb-cng-ThemeBackground-color);
+			contain: content;
+			margin-bottom: 0.1rem;
+		}
+
+		.kb-cng-MainContent {
+			background-color: var(--kb-cng-ThemeBackground-color);
+			background: var(--kb-cng-ThemeBackground-color);
+			padding: 0.5rem;
+			box-shadow: var(--kb-cng-ThemeShadow-type);
+			z-index: 1;
+			border: 0px;
+			contain: content;
+			border-radius: var(--kb-cng-BorderRadius);
+			margin: 0.5rem;
+		}
+
+		.kb-cng-HiddenFooter {
+			padding: 1rem;
+			border: 0px;
+			contain: content;
+			height: 150px;
+			width: var(--kb-cng-BIGFrameFooter-Width);
+		}
+
+		.kb-cng-HighlightedField {
+			background-color: var(--kb-cng-ThemeHighlightText-color);
+			background: var(--kb-cng-ThemeHighlightText-color);
+			padding: 0.5rem;
+			border-radius: var(--kb-cng-BorderRadius);
+			contain: content;
+			width: calc(100% - 2rem);
+			font-size: var(--kb-cng-FontSizeText);
+			font-style: italic;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5px;
+			margin-bottom: 10px;
+		}
+
+		.kb-cng-HighlightedFieldGreen {
+			background-color: var(--kb-cng-ThemeHighlightTextGreen-color);
+			background: var(--kb-cng-ThemeHighlightTextGreen-color);
+			padding: 0.5rem;
+			border-radius: var(--kb-cng-BorderRadius);
+			contain: content;
+			width: calc(100% - 2rem);
+			font-size: var(--kb-cng-FontSizeText);
+			font-style: italic;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5px;
+			margin-bottom: 10px;
+			display: var(--kb-cng-T1CommentDisplay);
+		}
+
+		footer {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: var(--kb-cng-BIGFrameFooter-Width);
+			display: flex;
+			transition: width 0.9s ease;
+		}
+
+		h1,
+		footer {
+			background: var(--kb-cng-ThemeFooter-color);
+			box-shadow: var(--kb-cng-ThemeShadow-type);
+			border-left: 0;
+			border-right: 0;
+			padding: 1em;
+			margin: 0;
+		}
+
+		.flexSpacer {
+			flex-grow: 1;
+			color: transparent;
+		}
+
+		.formEntry {
+			padding-bottom: var(--kb-cng-BottomPadding);
+		}
+
+		form#form {
+			width: var(--kb-cng-BIGFrameForm-Width);
+			transition: width 0.9s ease;
+		}
+
+		details summary:before {
+			content: "Show ";
+		}
+
+		details[open] summary:before {
+			content: "Hide ";
+		}
+
+		summary {
+			padding: 1rem;
+			color: var(--kb-cng-ThemeText-color);
+		}
+
+		select {
+			font: inherit;
+			padding: var(--kb-cng-SelectPadding);
+			margin-left: 1rem;
+			margin-right: auto;
+			border-radius: var(--kb-cng-BorderRadiusUI);
+			background-color: var(--kb-cng-ThemeSelect-color);
+			color: var(--kb-cng-ThemeSelectText-color);
+			max-width: calc(100% - 2rem);
+			text-overflow: ellipsis;
+			border: 0px solid transparent;
+			box-shadow: var(--kb-cng-BoxShadowInsetCom-type);
+			outline: 2px solid var(--kb-cng-OutlineDefault);
+			transition: 0.1s ease;
+		}
+
+		select:hover {
+			outline: 1px solid var(--kb-cng-OutlineHover);
+			outline-width: Medium;
+			border: 0px solid transparent;
+			transition: 0.1s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type),
+				var(--kb-cng-BoxShadowInsetCom-type);
+		}
+
+		select:focus-visible {
+			outline: 1px solid var(--kb-cng-OutlineHover);
+			outline-width: Medium;
+			border: 0px solid transparent;
+			transition: 0.1s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type),
+				var(--kb-cng-BoxShadowInsetCom-type);
+		}
+
+		input {
+			caret-color: var(--kb-cng-Black);
+			outline: 2px solid var(--kb-cng-OutlineDefault);
+			transition: 0.1s ease;
+		}
+
+		input:hover {
+			outline: 1px solid var(--kb-cng-OutlineHover);
+			outline-width: Medium;
+			border: 0px solid transparent;
+			transition: 0.1s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type),
+				var(--kb-cng-BoxShadowInsetCom-type);
+		}
+
+		input:focus-visible {
+			outline: 1px solid var(--kb-cng-OutlineHover);
+			outline-width: Medium;
+			border: 0px solid transparent;
+			transition: 0.1s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type),
+				var(--kb-cng-BoxShadowInsetCom-type);
+		}
+
+		input[type="checkbox"] {
+			appearance: none;
+			width: var(--kb-cng-CheckboxWidth);
+			height: var(--kb-cng-CheckboxHeight);
+			background: var(--kb-cng-ThemeInput-color);
+			border-radius: var(--kb-cng-BorderRadiusUI);
+			display: inline-block;
+			position: relative;
+			margin-left: 1rem;
+			border: 0px solid transparent;
+			box-shadow: var(--kb-cng-BoxShadowInsetCheck-type);
+			vertical-align: bottom;
+		}
+
+		input[type="checkbox"]:before {
+			content: "";
+			clip-path: polygon(24% 36%,
+					37% 51%,
+					71% 22%,
+					82% 36%,
+					36% 76%,
+					11% 48%);
+			display: inline-block;
+			width: var(--kb-cng-CheckboxTickWidth);
+			height: var(--kb-cng-CheckboxTickHeight);
+			vertical-align: bottom;
+			color: transparent;
+			border-radius: var(--kb-cng-BorderRadiusUI);
+		}
+
+		input[type="checkbox"]:checked {
+			background: var(--kb-cng-Gradient-Checkmark);
+			animation: jelly 0.6s ease;
+		}
+
+		input[type="checkbox"]:checked:before {
+			background: var(--kb-cng-Grey1);
+			background-color: var(--kb-cng-Grey1);
+			color: var(--kb-cng-Grey1);
+		}
+
+		#form textarea {
+			width: 100%;
+			max-width: calc(100% - 2rem);
+		}
+
+		textarea {
+			background-color: var(--kb-cng-ThemeTextarea-color);
+			width: var(--kb-cng-BIGFrameTextarea-Width);
+			border: 1px solid rgba(0, 0, 0, 0.25);
+			padding: var(--kb-cng-CommentPadding);
+			max-width: var(--kb-cng-BIGFrameTextarea-Width);
+			min-width: var(--kb-cng-BIGFrameTextarea-Width);
+			font: inherit;
+			margin-left: 1rem;
+			margin-right: 1rem;
+			border-radius: var(--kb-cng-BorderRadiusUI);
+			color: var(--kb-cng-ThemeTextareaText-color);
+			box-shadow: var(--kb-cng-BoxShadowInsetCom-type);
+			border: 0px solid transparent;
+			background: var(--kb-cng-ThemeTextarea-color);
+			outline: 2px solid var(--kb-cng-OutlineDefault);
+			transition: 0.1s ease;
+			margin-top: 0.5em;
+		}
+
+		textarea:hover {
+			outline: 1px solid var(--kb-cng-OutlineHover);
+			outline-width: Medium;
+			border: 0px solid transparent;
+			transition: 0.1s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type),
+				var(--kb-cng-BoxShadowInsetCom-type);
+		}
+
+		textarea:focus-visible {
+			outline: 1px solid var(--kb-cng-OutlineHover);
+			outline-width: Medium;
+			border: 0px solid transparent;
+			transition: 0.1s ease;
+			box-shadow: var(--kb-cng-BoxShadowHoverFormat-type),
+				var(--kb-cng-BoxShadowInsetCom-type);
+		}
+
+		textarea:disabled {
+			display: none;
+		}
+
+		label {
+			cursor: pointer;
+			user-select: none;
+			margin: 0 1rem;
+			display: inline-block;
+			color: var(--kb-cng-ThemeText-color);
+		}
+
+		label:first-child {
+			margin-left: 1rem;
+		}
+
+		.optionWithNotes textarea:placeholder-shown:not(:focus) {
+			background: transparent;
+			border-color: transparent;
+		}
+
+		.toast {
+			pointer-events: none;
+			animation: var(--kb-cng-ThemeToast-animation),
+				1.5s forwards slideUp;
+			position: fixed;
+			bottom: 6.2em;
+			left: 50%;
+			transform: translate(-50%, 0);
+			background: var(--kb-cng-ThemeToast-color);
+			background-color: var(--kb-cng-ThemeToast-color);
+			padding: 1em 2em;
+			box-shadow: var(--kb-cng-ThemeToast-shadow);
+			z-index: 1;
+			border: 0px;
+			contain: content;
+			border-radius: var(--kb-cng-BorderRadius);
+			color: var(--kb-cng-ThemeText-color);
+			font-weight: 600;
+			font-size: var(--kb-cng-FontSizeHeading);
+		}
+
+		/* EOI Calculator Styles*/
+		.eoiCalculator {
+			display: inline-block;
+			position: fixed;
+			opacity: var(--kb-cng-Calculator-Opacity);
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 10;
+			width: calc(100% - 2rem);
+			color: var(--kb-cng-ThemeText-color);
+			background: var(--kb-cng-ThemeBackground-color);
+			font-size: var(--kb-cng-FontSizeText);
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			border-radius: var(--kb-cng-BorderRadius);
+			overflow-y: scroll;
+			visibility: var(--kb-cng-Calculator-Visibility);
+			-webkit-transition: all 0.85s ease-in-out;
+			-moz-transition: all 0.85s ease-in-out;
+			-o-transition: all 0.85s ease-in-out;
+			transition: all 0.85s ease-in-out;
+		}
+
+		.eoiCalculator::before {
+			animation: var(--kb-cng-Calculator-MinAnimateShadow),
+				var(--kb-cng-Calculator-MajAnimateShadow);
+			content: "";
+			border-radius: 5rem;
+		}
+
+		#eoiSection1Calc {
+			margin-left: 10px;
+			display: block;
+		}
+
+		#eoiSection1Calc label {
+			margin: 0.25rem 1rem;
+			display: block;
+		}
+
+		#eoiSection1Calc label input,
+		#eoiSection1Calc .title {
+			vertical-align: middle;
+		}
+
+		#eoiSection1_total {
+			margin: 1rem;
+			color: var(--kb-cng-ThemeText-color);
+		}
+
+		#eoiFormatASection1Calc {
+			margin-left: 10px;
+			display: block;
+		}
+
+		#eoiFormatASection1Calc label {
+			margin: 0.25rem 1rem;
+			display: block;
+		}
+
+		#eoiFormatASection1Calc label input,
+		#eoiFormatASection1Calc .title {
+			vertical-align: middle;
+		}
+
+		#eoiFormatASection1_total {
+			margin: 1rem;
+			color: var(--kb-cng-ThemeText-color);
+		}
+
+		#eoiFormatCSection1Calc {
+			margin-left: 10px;
+			display: block;
+		}
+
+		#eoiFormatCSection1Calc label {
+			margin: 0.25rem 1rem;
+			display: block;
+		}
+
+		#eoiFormatCSection1Calc label input,
+		#eoiFormatCSection1Calc .title {
+			vertical-align: middle;
+		}
+
+		#eoiFormatCSection1_total {
+			margin: 1rem;
+			color: var(--kb-cng-ThemeText-color);
+		}
+
+		.statusEOICalcFloat {
+			position: fixed;
+			top: 0;
+			right: 0;
+			visibility: var(--kb-cng-Calculator-Visibility);
+		}
+
+		#Section1EOIStatus {
+			display: block;
+			margin: 0.32rem;
+			z-index: 11;
+			background: var(--kb-cng-Calculator-MinResult);
+			width: fit-content;
+			height: fit-content;
+			padding: 0.5rem;
+			font-size: var(--kb-cng-FontSizeText);
+			border-radius: var(--kb-cng-BorderRadius);
+			color: var(--kb-cng-ThemeText-color);
+			font-weight: 600;
+			animation: var(--kb-cng-Calculator-MinAnimateJump);
+			margin-right: 0.33rem;
+			margin-left: auto;
+			box-shadow: var(--kb-cng-Calculator-MinShadow);
+		}
+
+		#Section2EOIStatus {
+			display: block;
+			margin: 0.33rem;
+			z-index: 11;
+			background: var(--kb-cng-Calculator-MajResult);
+			width: fit-content;
+			height: fit-content;
+			padding: 0.5rem;
+			font-size: var(--kb-cng-FontSizeText);
+			border-radius: var(--kb-cng-BorderRadius);
+			color: var(--kb-cng-ThemeText-color);
+			font-weight: 600;
+			animation: var(--kb-cng-Calculator-MajAnimateJump);
+			margin-right: 0.33rem;
+			margin-left: auto;
+			box-shadow: var(--kb-cng-Calculator-MajShadow);
+		}
+
+		#eoiSection2Calc {
+			display: block;
+		}
+
+		#eoiSection2Calc label {
+			margin: 0.25rem 1rem;
+			display: block;
+		}
+
+		#eoiSection2Calc label input,
+		#eoiSection2Calc .title {
+			vertical-align: middle;
+		}
+
+		#eoiSection2_total {
+			margin: 0.75rem;
+			color: var(--kb-cng-ThemeText-color);
+		}
+
+		#eoiFormatCSection2Calc {
+			margin-left: 10px;
+			display: block;
+		}
+
+		#eoiFormatCSection2Calc label {
+			margin: 0.25rem 1rem;
+			display: block;
+		}
+
+		#eoiFormatCSection2Calc label input,
+		#eoiFormatCSection2Calc .title {
+			vertical-align: middle;
+		}
+
+		#eoiFormatCSection2_total {
+			margin: 0.75rem;
+			color: var(--kb-cng-ThemeText-color);
+		}
+
+		.eoiCalculator-TitleBar {
+			position: fixed;
+			background-color: var(--kb-cng-ThemeBanner-color);
+			background: var(--kb-cng-ThemeBanner-color);
+			padding: 0.5rem;
+			box-shadow: var(--kb-cng-ThemeShadow-type);
+			border: 0px;
+			contain: content;
+			border-radius: var(--kb-cng-BorderRadius);
+			margin: 0.5rem;
+			width: calc(100% - 4rem);
+			z-index: 9;
+			visibility: var(--kb-cng-Calculator-Visibility);
+			transform: var(--kb-cng-Calculator-Transform) var(--kb-cng-Calculator-Skew);
+			-webkit-transition: all 0.85s ease-in-out;
+			-moz-transition: all 0.85s ease-in-out;
+			-o-transition: all 0.85s ease-in-out;
+			transition: all 0.85s ease-in-out;
+		}
+
+		.eoiCalculator-TitleBar::before {
+			animation: var(--kb-cng-Calculator-MinAnimateShadow),
+				var(--kb-cng-Calculator-MajAnimateShadow);
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			border-radius: 5rem;
+		}
+
+		.eoiCalculator-TitleBar::after {
+			animation: var(--kb-cng-Calculator-MinAnimateShadow),
+				var(--kb-cng-Calculator-MajAnimateShadow);
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			border-radius: 5rem;
+		}
+
+		.eoiCalculator-Blur {
+			visibility: var(--kb-cng-Calculator-Visibility);
+			opacity: var(--kb-cng-Calculator-Opacity);
+			width: 100%;
+			height: 100%;
+			z-index: 9;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: fixed;
+			display: inline-block;
+			background: rgb(0 0 0 / 50%);
+			-webkit-transition: all 0.85s ease-in-out;
+			-moz-transition: all 0.85s ease-in-out;
+			-o-transition: all 0.85s ease-in-out;
+			transition: all 0.85s ease-in-out;
+		}
+
+		@media only screen and (max-width: 750px) {
+			select {
+				width: calc(100% - 2rem);
+				max-width: calc(100% - 2rem);
+				min-width: calc(100% - 2rem);
+			}
+
+			textarea {
+				width: calc(100% - 2rem);
+				padding: var(--kb-cng-CommentPadding);
+				max-width: calc(100% - 2rem);
+				min-width: calc(100% - 2rem);
+				font: inherit;
+				margin-left: 1rem;
+				margin-right: 1rem;
+				border-radius: var(--kb-cng-BorderRadiusUI);
+				color: var(--kb-cng-ThemeText-color);
+			}
+
+			#Section1EOIStatus {
+				padding: 0.2rem;
+			}
+
+			#Section2EOIStatus {
+				padding: 0.2rem;
+			}
+
+			#Ext-eoiCalcTMButton,
+			#tier1TMButton,
+			#compactTMButton,
+			#themeSelectTMButton,
+			#stickyTMButton,
+			#frameRightTMButton {
+				margin: 0.25rem;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.toggleModeFloat {
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				text-align: center;
+				display: contents;
+			}
+		}
+
+		@media only screen and (max-width: 450px) {
+			button {
+				width: calc(100% - 1rem);
+				max-width: calc(100% - 1rem);
+				min-width: calc(100% - 1rem);
+				position: relative;
+				margin-bottom: 10px;
+				margin-top: -5px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			footer {
+				display: inline-block;
+				width: 100%;
+				height: 125px;
+			}
+
+			.statusEOICalcFloat {
+				display: contents;
+				width: calc(100% - 1rem);
+			}
+
+			#eoiSection1Calc {
+				margin-top: 12rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Toasts and Full Note -->
+	<div id="toasts"></div>
+	<form id="form"></form>
+	<details>
+		<summary>full note &#128203;</summary>
+		<textarea id="output"></textarea>
+	</details>
+
+	<br />
+	<div class="kb-cng-HiddenFooter"></div>
+
+	<!-- Footer (Copy/Clear Buttons) -->
+	<footer id="footer">
+		<button id="clear"
+			onClick="document.body.classList.remove('buttonCopy-Active');document.body.classList.add('buttonClear-Active');document.getElementById('kb-cng-StickyNoteInput').value = ''; init(); toast('Cleared'); resetEOICalculatorSwitch();">
+			Clear Notes [Alt+Z]
+		</button>
+		<span class="flexSpacer">|</span>
+		<button id="copy"
+			onclick="navigator.clipboard.writeText(document.getElementById('output').value).then(toast('Copied'));document.body.classList.remove('buttonClear-Active');document.body.classList.add('buttonCopy-Active');">
+			Copy Note [Alt+C]
+		</button>
+	</footer>
+	<!-- Case Note Generator Functions -->
+	<script>
+		document.addEventListener("keyup", (e) => {
+			if (e.code === "KeyZ" && e.altKey) {
+				document.getElementById("clear").click();
+			}
+		});
+
+		document.addEventListener("keyup", (e) => {
+			if (e.code === "KeyC" && e.altKey) {
+				document.getElementById("copy").click();
+				e.preventDefault();
+			}
+		});
+		const toast = (text) => {
+			const popup = document.createElement("div");
+			popup.classList.add("toast");
+			const toasts = document.getElementById("toasts");
+			[...toasts.childNodes].forEach((toast) =>
+				toast?.classList?.add("hurry")
+			);
+			popup.innerHTML = text;
+			const node = toasts.appendChild(popup);
+			window.setTimeout(() => node.remove(), 2100);
+		};
+
+		function onInput() {
+			this.style.height = "auto";
+			this.style.height = this.scrollHeight + "px";
+		}
+
+		const initState = () =>
+			config.map((entry) => {
+				if (entry?.type) {
+					if (entry.type === "hidden") {
+						return entry.value;
+					}
+					if (entry.type === "select") {
+						return entry.values[
+							entry.default || entry.options[0]
+						];
+					}
+				}
+			});
+
+		const init = () => {
+			const output = document.getElementById("output");
+			const form = document.getElementById("form");
+			const updateOutput = () => {
+				output.value = state.reduce((prev, next) => {
+					if (next && prev) {
+						return prev + "\n" + next;
+					}
+					if (next) {
+						return next;
+					} else {
+						return prev;
+					}
+				});
+				onInput.call(output);
+			};
+			let state = initState();
+			updateOutput();
+			form.addEventListener("change", updateOutput);
+			form.replaceChildren();
+			config.forEach((entry, index) => {
+				const div = document.createElement("div");
+				let textarea = undefined;
+				if (typeof entry === "string") {
+					div.innerHTML = entry;
+					form.appendChild(div);
+					return;
+				}
+				div.classList.add("formEntry");
+				if (entry.key === undefined) {
+					entry.key = "formId" + index;
+				}
+				if (entry.label) {
+					const label = document.createElement("label");
+					label.innerHTML = entry.label;
+					label.setAttribute("for", entry.key);
+					div.appendChild(label);
+				}
+				switch (entry.type) {
+					case "checkbox":
+						const checkbox = document.createElement("input");
+						checkbox.setAttribute("type", "checkbox");
+						if (entry.key) {
+							checkbox.setAttribute("id", entry.key);
+						}
+						div.prepend(checkbox);
+
+						if (entry.comments) {
+							textarea = document.createElement("textarea");
+							textarea.setAttribute(
+								"placeholder",
+								entry.placeholder
+							);
+							div.appendChild(textarea);
+							textarea.setAttribute("disabled", "");
+						}
+
+						const update = () => {
+							if (entry.comments) {
+								state[index] =
+									(entry.values?.[checkbox.checked] ||
+										"") +
+									(textarea.value && checkbox.checked
+										? "\n" + textarea.value
+										: "");
+							} else {
+								state[index] =
+									entry.values?.[checkbox.checked] || "";
+							}
+						};
+
+						update();
+						if (entry.comments) {
+							textarea.addEventListener("change", update);
+						}
+						checkbox.addEventListener("change", () => {
+							update();
+							if (entry.comments) {
+								if (checkbox.checked) {
+									textarea.removeAttribute("disabled");
+									onInput.call(textarea);
+									textarea.select();
+								} else {
+									textarea.setAttribute("disabled", "");
+								}
+							}
+						});
+						break;
+					case "select":
+						const select = document.createElement("select");
+						if (entry.key) {
+							select.setAttribute("id", entry.key);
+						}
+						entry.options.forEach((option) => {
+							const opt = document.createElement("option");
+							opt.value = option;
+							opt.innerHTML = option;
+							select.appendChild(opt);
+						});
+						select.addEventListener("change", () => {
+							state[index] = entry.values[select.value];
+							updateOutput();
+						});
+						div.appendChild(select);
+						break;
+					case "textarea":
+						textarea = document.createElement("textarea");
+						if (entry.key) {
+							textarea.setAttribute("id", entry.key);
+						}
+						textarea.setAttribute(
+							"placeholder",
+							entry.placeholder
+						);
+						textarea.addEventListener("change", () => {
+							if (textarea.value) {
+								state[index] =
+									entry.label + "\n" + textarea.value;
+							} else {
+								state[index] = undefined;
+							}
+							updateOutput();
+						});
+						div.appendChild(textarea);
+						break;
+				}
+				form.appendChild(div);
+			});
+
+			const tx = document.getElementsByTagName("textarea");
+			for (let i = 0; i < tx.length; i++) {
+				tx[i].setAttribute(
+					"style",
+					"height:" + tx[i].scrollHeight + "px;overflow-y:hidden;"
+				);
+				tx[i].addEventListener("input", onInput, false);
+			}
+			document.forms[0].elements[0].focus();
+		};
+		init();
+	</script>
+	<!-- Sticky Note Functions -->
+	<script>
+		// Make the DIV element draggable:
+		dragElement(document.getElementById("kb-cng-StickyNote"));
+
+		function dragElement(elmnt) {
+			var pos1 = 0,
+				pos2 = 0,
+				pos3 = 0,
+				pos4 = 0;
+			if (document.getElementById(elmnt.id + "header")) {
+				// if present, the header is where you move the DIV from:
+				document.getElementById(elmnt.id + "header").onmousedown =
+					dragMouseDown;
+			} else {
+				// otherwise, move the DIV from anywhere inside the DIV:
+				elmnt.onmousedown = dragMouseDown;
+			}
+
+			function dragMouseDown(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// get the mouse cursor position at startup:
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				document.onmouseup = closeDragElement;
+				// call a function whenever the cursor moves:
+				document.onmousemove = elementDrag;
+			}
+
+			function elementDrag(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// calculate the new cursor position:
+				pos1 = pos3 - e.clientX;
+				pos2 = pos4 - e.clientY;
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				// set the element's new position:
+				elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+				elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+			}
+
+			function closeDragElement() {
+				// stop moving when mouse button is released:
+				document.onmouseup = null;
+				document.onmousemove = null;
+			}
+		}
+	</script>
+	<!-- Toggle Mode Button Functions -->
+	<script>
+		// Use Toggle Size Mode with Keypress
+		document.addEventListener("keyup", (e) => {
+			if (e.code === "Digit3" && e.altKey) {
+				document.getElementById("compactTMButton").click();
+			}
+		});
+		// Toggle Mode Buttons:
+		function toggleSizeModeSwitch() {
+			var sizeModeToggle = document.body;
+			sizeModeToggle.classList.toggle("themeAltSizing");
+
+			toast("Compact Sizing Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active"
+			);
+		}
+
+		// Use Tier 1 Comments with Keypress
+		document.addEventListener("keyup", (e) => {
+			if (e.code === "Digit2" && e.altKey) {
+				document.getElementById("tier1TMButton").click();
+			}
+		});
+		function toggleT1CommentModeSwitch() {
+			var T1CommentToggle = document.body;
+			T1CommentToggle.classList.toggle("Tier1CommentToggled");
+
+			toast("Tier 1 Hints Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active"
+			);
+		}
+
+		// Use Sticky Note with Keypress
+		document.addEventListener("keyup", (e) => {
+			if (e.code === "Digit5" && e.altKey) {
+				document.getElementById("stickyTMButton").click();
+			}
+		});
+		function toggleStickyNoteSwitch() {
+			var StickyNoteToggle = document.body;
+			StickyNoteToggle.classList.toggle("StickyNoteToggled");
+
+			toast("Sticky Note Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active"
+			);
+		}
+
+		function toggleUnderstandModeSwitch() {
+			var UnderstandToggle = document.body;
+			UnderstandToggle.classList.toggle("PopupToggle-Visibility");
+
+			toast("READY TO USE");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active"
+			);
+		}
+
+		function toggleEOICalculatorSwitch() {
+			var eoiCalcToggle = document.body;
+			eoiCalcToggle.classList.toggle("eoiCalculator-Visibility");
+
+			toast("EOI Calculator Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active"
+			);
+		}
+
+		// Use Livepro Toggle with Keypress
+		document.addEventListener("keyup", (e) => {
+			if (e.code === "Digit6" && e.altKey) {
+				document.getElementById("frameRightTMButton").click();
+			}
+		});
+
+		function toggleBIGFrame() {
+			var bigFrameToggle = document.body;
+			bigFrameToggle.classList.toggle("bigFrameRight-Toggled");
+
+			toast("Livepro Window Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active"
+			);
+		}
+
+		// Use Theme Select with Keypress
+		document.addEventListener("keyup", (e) => {
+			if (e.code === "Digit4" && e.altKey) {
+				document.getElementById("themeSelectTMButton").click();
+			}
+		});
+
+		function toggleThemeSelectPopup() {
+			var themeSelectPopup = document.body;
+			themeSelectPopup.classList.toggle("PopupTheme-Visibility");
+
+			toast("Theme Select Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active"
+			);
+		}
+
+		function toggleRemoveThemeSwitch() {
+			toast("Theme Disabled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active",
+				"secretChanges",
+				"themeForrest",
+				"themeOcean",
+				"themeMainframe",
+				"themeGradientTypeA",
+				"themeGradientTypeB",
+				"themeAlt"
+			);
+		}
+
+		function toggleDarkModeSwitch() {
+			var darkModeToggle = document.body;
+			darkModeToggle.classList.toggle("themeAlt");
+
+			toast("Light/Dark Mode Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active",
+				"secretChanges",
+				"themeForrest",
+				"themeOcean",
+				"themeMainframe",
+				"themeGradientTypeA",
+				"themeGradientTypeB"
+			);
+		}
+
+		function toggleForrestThemeSwitch() {
+			var forrestThemeToggle = document.body;
+			forrestThemeToggle.classList.toggle("themeForrest");
+
+			toast("Forrest Theme Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active",
+				"secretChanges",
+				"themeAlt",
+				"themeOcean",
+				"themeMainframe",
+				"themeGradientTypeA",
+				"themeGradientTypeB"
+			);
+		}
+
+		function toggleOceanThemeSwitch() {
+			var oceanThemeToggle = document.body;
+			oceanThemeToggle.classList.toggle("themeOcean");
+
+			toast("Ocean Theme Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active",
+				"secretChanges",
+				"themeAlt",
+				"themeForrest",
+				"themeMainframe",
+				"themeGradientTypeA",
+				"themeGradientTypeB"
+			);
+		}
+
+		function toggleMainframeThemeSwitch() {
+			var mainframeThemeToggle = document.body;
+			mainframeThemeToggle.classList.toggle("themeMainframe");
+
+			toast("Mainframe Theme Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active",
+				"secretChanges",
+				"themeAlt",
+				"themeForrest",
+				"themeGradientTypeA",
+				"themeGradientTypeB"
+			);
+		}
+
+		function toggleGradientAThemeSwitch() {
+			var gradientAThemeToggle = document.body;
+			gradientAThemeToggle.classList.toggle("themeGradientTypeA");
+
+			toast("Gradient A Theme Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active",
+				"secretChanges",
+				"themeAlt",
+				"themeForrest",
+				"themeGradientTypeB"
+			);
+		}
+
+		function toggleGradientBThemeSwitch() {
+			var gradientBThemeToggle = document.body;
+			gradientBThemeToggle.classList.toggle("themeGradientTypeB");
+
+			toast("Gradient B Theme Toggled");
+
+			document.body.classList.remove(
+				"buttonCopy-Active",
+				"buttonClear-Active",
+				"secretChanges",
+				"themeAlt",
+				"themeForrest",
+				"themeGradientTypeA"
+			);
+		}
+	</script>
+	<!-- EOI Calculator Functions -->
+	<script>
+		// Open EOI Calculator with Keypress
+		document.addEventListener("keyup", (e) => {
+			if (e.code === "Digit1" && e.altKey) {
+				document.getElementById("Ext-eoiCalcTMButton").click();
+			}
+		});
+		// EOI Calculator - Complete IHI Section1 EOI:
+		function checkFormatASection1EOI() {
+			var eoiFormatASection1Base = 0;
+			var eoiFormatASection1Add = 0;
+			if (document.getElementById("eoiFormatASection1Item_1").checked) {
+				eoiFormatASection1Add += 25;
+			}
+			if (document.getElementById("eoiFormatASection1Item_2").checked) {
+				eoiFormatASection1Add += 25;
+			}
+			if (document.getElementById("eoiFormatASection1Item_3").checked) {
+				eoiFormatASection1Add += 25;
+			}
+			if (document.getElementById("eoiFormatASection1Item_4").checked) {
+				eoiFormatASection1Add += 25;
+			}
+			var eoiFormatASection1Points = eoiFormatASection1Base + eoiFormatASection1Add;
+			var eoiFormatASection1CalcTotal =
+				"Subtotal: " +
+				eoiFormatASection1Points +
+				"/100% for Completed IHI-Only Section1 Security Check";
+			document.getElementById("eoiFormatASection1_total").innerHTML =
+				eoiFormatASection1CalcTotal;
+
+			let Section1EOIOutcome;
+			if (eoiFormatASection1Points < 99) {
+				Section1EOIOutcome = "// Section1: Additional Required";
+				var Section1EOISuccessToggle = document.body;
+				Section1EOISuccessToggle.classList.remove(
+					"eoiCalculator-MinSuccess"
+				);
+			} else {
+				Section1EOIOutcome =
+					"// Completed IHI-Only Section1 Security Check";
+				var Section1EOISuccessToggle = document.body;
+				Section1EOISuccessToggle.classList.add(
+					"eoiCalculator-MinSuccess"
+				);
+			}
+			document.getElementById("Section1EOIStatus").innerHTML =
+				Section1EOIOutcome;
+		}
+		// EOI Calculator - Complete Format C Section1 EOI:
+		function checkFormatCSection1EOI() {
+			var eoiFormatCSection1Base = 0;
+			var eoiFormatCSection1Add = 0;
+			if (document.getElementById("eoiFormatCSection1Item_1").checked) {
+				eoiFormatCSection1Add += 15;
+			}
+			if (document.getElementById("eoiFormatCSection1Item_2").checked) {
+				eoiFormatCSection1Add += 10;
+			}
+			if (document.getElementById("eoiFormatCSection1Item_3").checked) {
+				eoiFormatCSection1Add += 10;
+			}
+			if (document.getElementById("eoiFormatCSection1Item_4").checked) {
+				eoiFormatCSection1Add += 10;
+			}
+			var eoiFormatCSection1Points = eoiFormatCSection1Base + eoiFormatCSection1Add;
+			var eoiFormatCSection1CalcTotal =
+				"Subtotal: " + eoiFormatCSection1Points + " Points";
+			document.getElementById("eoiFormatCSection1_total").innerHTML =
+				eoiFormatCSection1CalcTotal;
+
+			let Section1EOIOutcome;
+			if (eoiFormatCSection1Points < 44) {
+				Section1EOIOutcome = "// Section1: Additional Required";
+				var Section1EOISuccessToggle = document.body;
+				Section1EOISuccessToggle.classList.remove(
+					"eoiCalculator-MinSuccess"
+				);
+			} else {
+				Section1EOIOutcome = "// Completed Format C Section1 Security Check";
+				var Section1EOISuccessToggle = document.body;
+				Section1EOISuccessToggle.classList.add(
+					"eoiCalculator-MinSuccess"
+				);
+			}
+			document.getElementById("Section1EOIStatus").innerHTML =
+				Section1EOIOutcome;
+		}
+
+		// EOI Calculator - Complete Section1 EOI:
+		function checkSection1EOI() {
+			var eoiSection1Base = 0;
+			var eoiSection1Add = 0;
+			if (document.getElementById("eoiSection1Item_1").checked) {
+				eoiSection1Add += 15;
+			}
+			if (document.getElementById("eoiSection1Item_2").checked) {
+				eoiSection1Add += 10;
+			}
+			if (document.getElementById("eoiSection1Item_3").checked) {
+				eoiSection1Add += 10;
+			}
+			if (document.getElementById("eoiSection1Item_4").checked) {
+				eoiSection1Add += 10;
+			}
+			var eoiSection1Points = eoiSection1Base + eoiSection1Add;
+			var eoiSection1CalcTotal =
+				"Subtotal: " + eoiSection1Points + " Points";
+			document.getElementById("eoiSection1_total").innerHTML =
+				eoiSection1CalcTotal;
+
+			let Section1EOIOutcome;
+			if (eoiSection1Points < 44) {
+				Section1EOIOutcome = "// Section1: Additional Required";
+				var Section1EOISuccessToggle = document.body;
+				Section1EOISuccessToggle.classList.remove(
+					"eoiCalculator-MinSuccess"
+				);
+			} else {
+				Section1EOIOutcome = "// Completed Section1 Security Check";
+				var Section1EOISuccessToggle = document.body;
+				Section1EOISuccessToggle.classList.add(
+					"eoiCalculator-MinSuccess"
+				);
+			}
+			document.getElementById("Section1EOIStatus").innerHTML =
+				Section1EOIOutcome;
+		}
+
+		// EOI Calculator - Complete Section2 EOI:
+		function checkSection2EOI() {
+			var eoiSection2Base = 0;
+			var eoiSection2Add = 0;
+			if (document.getElementById("eoiSection2Item_1").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_2").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_3").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_4").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_5").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_6").checked) {
+				eoiSection2Add += 5;
+			}
+			if (document.getElementById("eoiSection2Item_7").checked) {
+				eoiSection2Add += 5;
+			}
+			if (document.getElementById("eoiSection2Item_8").checked) {
+				eoiSection2Add += 5;
+			}
+			if (document.getElementById("eoiSection2Item_9").checked) {
+				eoiSection2Add += 5;
+			}
+			if (document.getElementById("eoiSection2Item_10").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_11").checked) {
+				eoiSection2Add += 5;
+			}
+			if (document.getElementById("eoiSection2Item_12").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_13").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_14").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_15").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_16").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_17").checked) {
+				eoiSection2Add += 10;
+			}
+			if (document.getElementById("eoiSection2Item_18").checked) {
+				eoiSection2Add += 10;
+			}
+			if (document.getElementById("eoiSection2Item_19").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_20").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_21").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_22").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_23").checked) {
+				eoiSection2Add += 5;
+			}
+
+			if (document.getElementById("eoiSection2Item_24").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_25").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_26").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_27").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_28").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_29").checked) {
+				eoiSection2Add += 5;
+			}
+			if (document.getElementById("eoiSection2Item_30").checked) {
+				eoiSection2Add += 5;
+			}
+			if (document.getElementById("eoiSection2Item_31").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_32").checked) {
+				eoiSection2Add += 15;
+			}
+			if (document.getElementById("eoiSection2Item_33").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_34").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_35").checked) {
+				eoiSection2Add += 10;
+			}
+			if (document.getElementById("eoiSection2Item_36").checked) {
+				eoiSection2Add += 10;
+			}
+			if (document.getElementById("eoiSection2Item_37").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_38").checked) {
+				eoiSection2Add += 25;
+			}
+			if (document.getElementById("eoiSection2Item_39").checked) {
+				eoiSection2Add += 5;
+			}
+			if (document.getElementById("eoiSection2Item_40").checked) {
+				eoiSection2Add += 5;
+			}
+
+			var eoiSection2Points = eoiSection2Base + eoiSection2Add + 45;
+			var eoiSection2CalcTotal =
+				"Total: " + eoiSection2Points + " /100 Required for Section2";
+			document.getElementById("eoiSection2_total").innerHTML =
+				eoiSection2CalcTotal;
+
+			let Section2EOIOutcome;
+			if (eoiSection2Points < 99) {
+				Section2EOIOutcome = "// Section2: Additional Required";
+				var Section2EOISuccessToggle = document.body;
+				Section2EOISuccessToggle.classList.remove(
+					"eoiCalculator-MajSuccess"
+				);
+			} else {
+				Section2EOIOutcome = "// Completed Section2 Security Check";
+				var Section2EOISuccessToggle = document.body;
+				Section2EOISuccessToggle.classList.add(
+					"eoiCalculator-MajSuccess"
+				);
+			}
+			document.getElementById("Section2EOIStatus").innerHTML =
+				Section2EOIOutcome;
+		}
+
+		function resetEOICalculatorSwitch() {
+			document.getElementById("eoiFormatASection1Calc").reset();
+			document.getElementById("eoiSection1Calc").reset();
+			document.getElementById("eoiFormatCSection1Calc").reset();
+			document.getElementById("eoiSection2Calc").reset();
+			document.getElementById("eoiSection2Calc").reset();
+
+			var eoiCalcResetMinStyle = document.body;
+			eoiCalcResetMinStyle.classList.remove(
+				"eoiCalculator-MinSuccess"
+			);
+
+			var eoiCalcResetMajStyle = document.body;
+			eoiCalcResetMajStyle.classList.remove(
+				"eoiCalculator-MajSuccess"
+			);
+
+			let Section1EOIOutcome;
+			{
+				Section1EOIOutcome = "// Section1: Additional Required";
+			}
+			document.getElementById("Section1EOIStatus").innerHTML =
+				Section1EOIOutcome;
+
+			let Section2EOIOutcome;
+			{
+				Section2EOIOutcome = "// Section2: Additional Required";
+			}
+			document.getElementById("Section2EOIStatus").innerHTML =
+				Section2EOIOutcome;
+
+			var eoiFormatASection1CalcTotal = "All above required for IHI Section1";
+			document.getElementById("eoiFormatASection1_total").innerHTML =
+				eoiFormatASection1CalcTotal;
+
+			var eoiFormatCSection1CalcTotal =
+				"Subtotal: ~/45 Required for Format C Section1";
+			document.getElementById("eoiFormatCSection1_total").innerHTML =
+				eoiFormatCSection1CalcTotal;
+
+			var eoiSection1CalcTotal = "Subtotal: ~/45 Required for Section1";
+			document.getElementById("eoiSection1_total").innerHTML =
+				eoiSection1CalcTotal;
+
+			var eoiSection2CalcTotal = "Total: ~/100 Required for Section2";
+			document.getElementById("eoiSection2_total").innerHTML =
+				eoiSection2CalcTotal;
+		}
+	</script>
+	<!-- Accordions -->
+	<script>
+		var acc = document.getElementsByClassName("kb-cng-accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function () {
+				this.classList.toggle("kb-cng-active");
+				var panel = this.nextElementSibling;
+				if (panel.style.maxHeight) {
+					panel.style.maxHeight = null;
+				} else {
+					panel.style.maxHeight = panel.scrollHeight + "px";
+				}
+			});
+		}
+	</script>
+	<!-- Secret Function -->
+	<script>
+		var konamiPattern = [
+			"ArrowUp",
+			"ArrowUp",
+			"ArrowDown",
+			"ArrowDown",
+			"ArrowLeft",
+			"ArrowRight",
+			"ArrowLeft",
+			"ArrowRight",
+			"b",
+			"a",
+		];
+		var konamiCurrent = 0;
+
+		var konamiHandler = function (event) {
+			// If the key isn't in the pattern, or isn't the current key in the pattern, reset
+			if (
+				konamiPattern.indexOf(event.key) < 0 ||
+				event.key !== konamiPattern[konamiCurrent]
+			) {
+				konamiCurrent = 0;
+				return;
+			}
+
+			// Update how much of the pattern is complete
+			konamiCurrent++;
+
+			// If complete, alert and reset
+			if (konamiPattern.length === konamiCurrent) {
+				konamiCurrent = 0;
+				window.alert("You found it!");
+				document.body.classList.toggle("secretChanges");
+				toast("Nice Find!");
+				document.body.classList.remove(
+					"buttonCopy-Active",
+					"buttonClear-Active",
+					"themeForrest",
+					"themeAlt",
+					"themeForrest",
+					"themeOcean",
+					"themeMainframe",
+					"themeGradientTypeA",
+					"themeGradientTypeB"
+				);
+			}
+		};
+
+		// Listen for keydown events
+		document.addEventListener("keydown", konamiHandler, false);
+	</script>
+</body>
+
+</html>
